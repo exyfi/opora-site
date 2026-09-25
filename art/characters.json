@@ -1,0 +1,477 @@
+[
+ {
+  "id": "frozen",
+  "raw": 0,
+  "title": {
+   "ru": "Кубик",
+   "en": "Cubie",
+   "es": "Cubito"
+  },
+  "stateLine": {
+   "ru": "когда не могу начать",
+   "en": "when I can't start",
+   "es": "cuando no puedo empezar"
+  },
+  "quirk": {
+   "ru": "не может начать. и не начнёт",
+   "en": "can't start. and won't",
+   "es": "no puede empezar. y no empezará"
+  }
+ },
+ {
+  "id": "overloaded",
+  "raw": 1,
+  "title": {
+   "ru": "Трёхглаз",
+   "en": "Threeyes",
+   "es": "Tresojos"
+  },
+  "stateLine": {
+   "ru": "когда слишком много всего",
+   "en": "when it's all too much",
+   "es": "cuando todo es demasiado"
+  },
+  "quirk": {
+   "ru": "видит всё, не понимает ничего",
+   "en": "sees everything, understands nothing",
+   "es": "lo ve todo, no entiende nada"
+  }
+ },
+ {
+  "id": "hyperfocus",
+  "raw": 2,
+  "title": {
+   "ru": "Циклоп",
+   "en": "Cyclops",
+   "es": "Cíclope"
+  },
+  "stateLine": {
+   "ru": "когда залип",
+   "en": "when I'm locked in",
+   "es": "cuando me quedo enganchado"
+  },
+  "quirk": {
+   "ru": "залип. это надолго",
+   "en": "locked in. it's for a while",
+   "es": "enganchado. va para largo"
+  }
+ },
+ {
+  "id": "storm",
+  "raw": 3,
+  "title": {
+   "ru": "Волнуш",
+   "en": "Stormy",
+   "es": "Tormentoso"
+  },
+  "stateLine": {
+   "ru": "когда штормит",
+   "en": "when it's stormy",
+   "es": "cuando hay tormenta"
+  },
+  "quirk": {
+   "ru": "штормит, но пластырь наклеен",
+   "en": "stormy, but the band-aid is on",
+   "es": "hay tormenta, pero lleva tirita"
+  }
+ },
+ {
+  "id": "anxiety",
+  "raw": 4,
+  "title": {
+   "ru": "Дрож",
+   "en": "Jitters",
+   "es": "Tembleque"
+  },
+  "stateLine": {
+   "ru": "когда тревожно",
+   "en": "when I'm anxious",
+   "es": "cuando hay ansiedad"
+  },
+  "quirk": {
+   "ru": "переживает заранее",
+   "en": "worries in advance",
+   "es": "se preocupa por adelantado"
+  }
+ },
+ {
+  "id": "torn",
+  "raw": 5,
+  "title": {
+   "ru": "Развод",
+   "en": "Shruggy",
+   "es": "Dudoso"
+  },
+  "stateLine": {
+   "ru": "когда не могу выбрать",
+   "en": "when I can't choose",
+   "es": "cuando no puedo elegir"
+  },
+  "quirk": {
+   "ru": "выбирает вторые сутки",
+   "en": "day two of choosing",
+   "es": "lleva dos días eligiendo"
+  }
+ },
+ {
+  "id": "couch",
+  "raw": 6,
+  "title": {
+   "ru": "Лежень",
+   "en": "Puddle",
+   "es": "Charquito"
+  },
+  "stateLine": {
+   "ru": "когда тянет отложить",
+   "en": "when I'm putting it off",
+   "es": "cuando quiero aplazarlo"
+  },
+  "quirk": {
+   "ru": "ещё пять минут (пять часов)",
+   "en": "five more minutes (five hours)",
+   "es": "cinco minutos más (cinco horas)"
+  }
+ },
+ {
+  "id": "distracted",
+  "raw": 7,
+  "title": {
+   "ru": "Батон",
+   "en": "Loafy",
+   "es": "Barrita"
+  },
+  "stateLine": {
+   "ru": "когда отвлекаюсь",
+   "en": "when I get distracted",
+   "es": "cuando me distraigo"
+  },
+  "quirk": {
+   "ru": "отвлёкся. на что — забыл",
+   "en": "got distracted. forgot by what",
+   "es": "se distrajo. ya no sabe con qué"
+  }
+ },
+ {
+  "id": "tangled",
+  "raw": 8,
+  "title": {
+   "ru": "Растрёп",
+   "en": "Frazzle",
+   "es": "Despeinado"
+  },
+  "stateLine": {
+   "ru": "когда рутина развалилась",
+   "en": "when the routine fell apart",
+   "es": "cuando la rutina se derrumbó"
+  },
+  "quirk": {
+   "ru": "рутина развалилась вместе с причёской",
+   "en": "routine fell apart, hair included",
+   "es": "la rutina se derrumbó, peinado incluido"
+  }
+ },
+ {
+  "id": "wired",
+  "raw": 9,
+  "title": {
+   "ru": "Гуделка",
+   "en": "Buzzy",
+   "es": "Zumbido"
+  },
+  "stateLine": {
+   "ru": "когда не могу отдыхать",
+   "en": "when I can't rest",
+   "es": "cuando no puedo descansar"
+  },
+  "quirk": {
+   "ru": "устал, но не отдыхает. принципиально",
+   "en": "tired, but won't rest. on principle",
+   "es": "cansado, pero no descansa. por principios"
+  }
+ },
+ {
+  "id": "chill",
+  "raw": 10,
+  "title": {
+   "ru": "Тихоня",
+   "en": "Mellow",
+   "es": "Tranquilo"
+  },
+  "stateLine": {
+   "ru": "когда всё норм",
+   "en": "when things are fine",
+   "es": "cuando todo va bien"
+  },
+  "quirk": {
+   "ru": "ему норм. серьёзно",
+   "en": "he's fine. seriously",
+   "es": "está bien. en serio"
+  }
+ },
+ {
+  "id": "swole",
+  "raw": 11,
+  "title": {
+   "ru": "Жимик",
+   "en": "Swolley",
+   "es": "Musculín"
+  },
+  "quirk": {
+   "ru": "гордо раздувает грудь",
+   "en": "proudly puffs his chest",
+   "es": "infla el pecho con orgullo"
+  }
+ },
+ {
+  "id": "brick",
+  "raw": 12,
+  "title": {
+   "ru": "Кирпичик",
+   "en": "Bricky",
+   "es": "Ladrillito"
+  },
+  "quirk": {
+   "ru": "пытается подпрыгнуть",
+   "en": "tries to jump",
+   "es": "intenta saltar"
+  }
+ },
+ {
+  "id": "sock",
+  "raw": 13,
+  "title": {
+   "ru": "Носочек",
+   "en": "Socky",
+   "es": "Calcetín"
+  },
+  "quirk": {
+   "ru": "всю жизнь ищет пару",
+   "en": "looking for his pair all his life",
+   "es": "busca su par toda la vida"
+  }
+ },
+ {
+  "id": "toast",
+  "raw": 14,
+  "title": {
+   "ru": "Тостик",
+   "en": "Toasty",
+   "es": "Tostadita"
+  },
+  "quirk": {
+   "ru": "периодически подгорает",
+   "en": "burns a little sometimes",
+   "es": "se quema un poco a veces"
+  }
+ },
+ {
+  "id": "pickle",
+  "raw": 15,
+  "title": {
+   "ru": "Огурнавт",
+   "en": "Picklenaut",
+   "es": "Pepinauta"
+  },
+  "quirk": {
+   "ru": "не понимает, где находится",
+   "en": "has no idea where he is",
+   "es": "no sabe dónde está"
+  }
+ },
+ {
+  "id": "fine",
+  "raw": 16,
+  "title": {
+   "ru": "Норман",
+   "en": "Norman",
+   "es": "Normancito"
+  },
+  "quirk": {
+   "ru": "у него всё под контролем",
+   "en": "everything is under control",
+   "es": "lo tiene todo controlado"
+  }
+ },
+ {
+  "id": "cap",
+  "raw": 17,
+  "title": {
+   "ru": "Всратыш",
+   "en": "Scruffy",
+   "es": "Chusquito"
+  },
+  "quirk": {
+   "ru": "на раёне с 2007",
+   "en": "reppin' the block since 2007",
+   "es": "en el barrio desde 2007"
+  }
+ },
+ {
+  "id": "peargent",
+  "raw": 18,
+  "title": {
+   "ru": "Грушевой",
+   "en": "Peargent",
+   "es": "Peragente"
+  },
+  "quirk": {
+   "ru": "свистит в свисток без причины",
+   "en": "blows the whistle for no reason",
+   "es": "pita el silbato sin motivo"
+  }
+ },
+ {
+  "id": "taxcrab",
+  "raw": 19,
+  "title": {
+   "ru": "Крабухгалтер",
+   "en": "TaxCrab",
+   "es": "CangreContable"
+  },
+  "quirk": {
+   "ru": "считает налоги во сне",
+   "en": "does taxes in his sleep",
+   "es": "calcula impuestos dormido"
+  }
+ },
+ {
+  "id": "banana",
+  "raw": 20,
+  "title": {
+   "ru": "Доктор Банан",
+   "en": "Dr. Banana",
+   "es": "Dr. Plátano"
+  },
+  "quirk": {
+   "ru": "выписывает справку от всего",
+   "en": "writes you a sick note for everything",
+   "es": "te da un justificante para todo"
+  }
+ },
+ {
+  "id": "bridepotato",
+  "raw": 21,
+  "title": {
+   "ru": "Картофеевна",
+   "en": "Bride Potato",
+   "es": "Papa Novia"
+  },
+  "quirk": {
+   "ru": "мечтает о свадьбе",
+   "en": "dreams of the wedding",
+   "es": "sueña con la boda"
+  }
+ },
+ {
+  "id": "sirwiggles",
+  "raw": 23,
+  "title": {
+   "ru": "Сэр Червякс",
+   "en": "Sir Wiggles",
+   "es": "Sir Gusano"
+  },
+  "quirk": {
+   "ru": "кидает золотые монетки",
+   "en": "tosses gold coins",
+   "es": "lanza moneditas de oro"
+  }
+ },
+ {
+  "id": "ducknight",
+  "raw": 24,
+  "title": {
+   "ru": "Утыцарь",
+   "en": "Ducknight",
+   "es": "Pato Caballero"
+  },
+  "quirk": {
+   "ru": "меч слишком тяжёлый",
+   "en": "the sword is too heavy",
+   "es": "la espada pesa demasiado"
+  }
+ },
+ {
+  "id": "corporatefrog",
+  "raw": 25,
+  "title": {
+   "ru": "Жабби",
+   "en": "Corporate Frog",
+   "es": "Rana Corporativa"
+  },
+  "quirk": {
+   "ru": "постоянно вздыхает",
+   "en": "sighs constantly",
+   "es": "suspira sin parar"
+  }
+ },
+ {
+  "id": "dumplingus",
+  "raw": 26,
+  "title": {
+   "ru": "Пельмениус",
+   "en": "Dumplingus",
+   "es": "Dumplingus"
+  },
+  "quirk": {
+   "ru": "принимает боевую стойку",
+   "en": "assumes the battle stance",
+   "es": "adopta pose de combate"
+  }
+ },
+ {
+  "id": "wizardchicken",
+  "raw": 27,
+  "title": {
+   "ru": "Куролдун",
+   "en": "Wizard Chicken",
+   "es": "Gallina Maga"
+  },
+  "quirk": {
+   "ru": "ничего не понимает в магии",
+   "en": "understands nothing about magic",
+   "es": "no entiende nada de magia"
+  }
+ },
+ {
+  "id": "skatefish",
+  "raw": 28,
+  "title": {
+   "ru": "Скейтокарась",
+   "en": "Skatefish",
+   "es": "Pez Patinador"
+  },
+  "quirk": {
+   "ru": "катается без цели",
+   "en": "skates with no destination",
+   "es": "patina sin rumbo"
+  }
+ },
+ {
+  "id": "larpochka",
+  "raw": 29,
+  "title": {
+   "ru": "Ларпочка",
+   "en": "Larpochka",
+   "es": "Larpochka"
+  },
+  "quirk": {
+   "ru": "эльф по призванию, не по паспорту",
+   "en": "elf by calling, not by passport",
+   "es": "elfo por vocación, no por pasaporte"
+  }
+ },
+ {
+  "id": "dristun",
+  "raw": 30,
+  "title": {
+   "ru": "Дристун",
+   "en": "Dristun",
+   "es": "Dristun"
+  },
+  "quirk": {
+   "ru": "бежит. срочно. куда — не скажет",
+   "en": "running. urgently. won't say where",
+   "es": "corre. urgente. no dice adónde"
+  }
+ }
+]

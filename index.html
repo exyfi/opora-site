@@ -1,89 +1,494 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Опора — фокус-таймер и КПТ-навыки для СДВГ</title>
-<meta name="description" content="Опора — фокус-таймер и практики из КПТ для СДВГ-мозга: свой интервал, непунитивная роща, задачи-звери, техники заземления. iOS.">
-<style>
-:root { --paper:#F7F3EA; --surface:#FFFDF7; --ink:#2A251D; --muted:#7A7263;
-        --forest:#2F6D46; --amber:#D98E2B; --line:rgba(125,115,95,.22); }
-@media (prefers-color-scheme: dark) {
-  :root { --paper:#1C1A16; --surface:#26231F; --ink:#F2EDE3; --muted:#A79E8D;
-          --forest:#8FC7A0; --amber:#E8A33D; --line:rgba(200,190,170,.16); }
-}
-* { box-sizing: border-box; }
-body { background:var(--paper); color:var(--ink); margin:0; padding:56px 20px 90px;
-  font:17px/1.65 -apple-system, system-ui, "Segoe UI", sans-serif; }
-main { max-width:660px; margin:0 auto; }
-h1 { font-size:34px; line-height:1.15; letter-spacing:-.02em; margin:0 0 10px; }
-.lead { color:var(--muted); font-size:19px; margin:0 0 36px; }
-h2 { font-size:20px; margin:44px 0 12px; color:var(--forest); }
-ul { padding-left:22px; margin:12px 0; }
-li { margin:9px 0; }
-.card { background:var(--surface); border:1px solid var(--line); border-radius:16px;
-  padding:18px 20px; margin:16px 0; }
-.card h3 { margin:0 0 6px; font-size:17px; }
-.card p { margin:0; color:var(--muted); font-size:15px; }
-a { color:var(--forest); }
-.links { display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
-.links a { display:inline-block; padding:11px 18px; border-radius:12px;
-  background:var(--forest); color:var(--paper); text-decoration:none; font-weight:600; }
-.links a.ghost { background:transparent; color:var(--forest); border:1px solid var(--forest); }
-footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
-  color:var(--muted); font-size:14px; }
-.sprout { font-size:44px; line-height:1; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Opora: ADHD focus timer and CBT skills</title>
+<meta name="description" content="An iPhone app for the ADHD brain: a timer set to your own focus length, tasks as animals, a grove, and CBT and DBT skills for hard moments.">
+<link rel="canonical" href="https://getopora.app/">
+<link rel="alternate" hreflang="en" href="https://getopora.app/">
+<link rel="alternate" hreflang="ru" href="https://getopora.app/ru/">
+<link rel="alternate" hreflang="x-default" href="https://getopora.app/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F3EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1A16" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6800092761">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Opora">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:url" content="https://getopora.app/">
+<meta property="og:title" content="Opora: ADHD focus timer and CBT skills">
+<meta property="og:description" content="An iPhone app for the ADHD brain: a timer set to your own focus length, tasks as animals, a grove, and CBT and DBT skills for hard moments.">
+<meta property="og:image" content="https://getopora.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Opora’s weirdos and the hedgehog standing in a row under the headline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Opora: ADHD focus timer and CBT skills">
+<meta name="twitter:description" content="An iPhone app for the ADHD brain: a timer set to your own focus length, tasks as animals, a grove, and CBT and DBT skills for hard moments.">
+<meta name="twitter:image" content="https://getopora.app/og.png">
+<meta name="twitter:image:alt" content="Opora’s weirdos and the hedgehog standing in a row under the headline">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/nunito.css">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
 </head>
 <body>
-<main>
-  <div class="sprout">🌱</div>
-  <h1>Опора</h1>
-  <p class="lead">Фокус-таймер и навыки из КПТ для СДВГ-мозга. Не подгоняет и не стыдит —
-  подставляет плечо.</p>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="card">
-    <h3>Свой интервал, а не «помидорный»</h3>
-    <p>Калибровка подбирает твою длину фокуса. Перерыв и работа не стартуют сами: на границе
-    таймер ждёт кнопки.</p>
-  </div>
-  <div class="card">
-    <h3>Роща растёт с тобой</h3>
-    <p>Каждый интервал — растение, цепочки и награды. Пропущенный день ничего не убивает:
-    пустой холмик — завтрашняя клумба.</p>
-  </div>
-  <div class="card">
-    <h3>Практики из терапии</h3>
-    <p>Заземление 5-4-3-2-1, TIPP и STOP из ДБТ, дыхание, разбор решений, план отдыха.
-    У каждой техники написано, почему она работает.</p>
-  </div>
-  <div class="card">
-    <h3>Задачи-звери</h3>
-    <p>🦬 важно-срочно (максимум три), 🐘 большое — дели, 🐇 быстрое, 🐼 потом. Плюс 1–3
-    «камня недели» — крупных дела.</p>
-  </div>
+<header class="wrap site-header">
+  <a class="brand" href="index.html"><img src="logo.webp" alt="" width="36" height="36">Opora</a>
+  <a class="lang-switch" href="ru/index.html" hreflang="ru" lang="ru">Русский</a>
+</header>
 
-  <h2>Приватность в одну строку</h2>
-  <p>Опора не собирает личные данные: задачи, сессии и настройки живут на устройстве,
-  аккаунт не нужен, рекламы нет. Покупки Plus проходят через App Store и RevenueCat под
-  анонимным идентификатором. Подробности — в политике конфиденциальности.</p>
+<main id="main">
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-panel">
+      <div class="hero-pitch">
+        <h1 class="hero-title" id="hero-title">ADHD focus help from weirdos who stall like you</h1>
+        <p class="hero-lead">Opora gives you a timer set to your own focus length, tasks sorted as animals, and CBT and DBT skills for the moments you stall.</p>
+        <a class="button button-primary hero-cta" href="https://apps.apple.com/app/id6800092761">Get Opora on the App Store <span class="button-tag">free</span></a>
+        <ul class="chips hero-chips" role="list" aria-label="At a glance">
+          <li class="chip">iPhone, iOS&nbsp;17+</li>
+          <li class="chip">No account, no ads</li>
+          <li class="chip">Your data stays on your phone</li>
+        </ul>
+        <p class="hero-fine">Opora Plus is one purchase or a monthly subscription.</p>
+      </div>
+      <div class="hero-stage">
+        <div class="hero-say">
+          <p class="time-caption">8:40&nbsp;AM <span>· the plan said 8:00</span></p>
+          <p class="bubble"><span class="visually-hidden">Cubie says: </span>can’t start. and won’t</p>
+        </div>
+        <img class="hero-who" src="art/frozen-neutral.webp" width="424" height="512" fetchpriority="high"
+             alt="Cubie, a blue weirdo, frozen at the start of the morning">
+        <figure class="notification hero-note" aria-label="A morning notification from Opora">
+          <div class="notification-head"><img src="logo.webp" alt="" width="20" height="20">Opora<span class="muted">now</span></div>
+          <p class="notification-title">Today’s seed: call the dentist</p>
+          <p>First step: find the number. 25&nbsp;min, and the grove gains one.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <div class="links">
-    <a href="privacy.html">Политика конфиденциальности</a>
-    <a class="ghost" href="support.html">Поддержка</a>
-  </div>
+  <section class="wrap section">
+    <h2 class="section-title" id="day-title">Each hard moment of the day has a weirdo in it</h2>
+    <p class="section-lead">Each one sits in a state you know, next to the part of Opora that helps with it.</p>
 
-  <h2>English</h2>
-  <p>Opora is a focus timer and CBT skills toolkit for the ADHD brain: your own interval
-  (not a rigid pomodoro), a non-punitive grove that grows with every session, animal-priority
-  tasks, and therapy-based practices — each explaining why it works. No accounts, no ads:
-  everything you do stays on your device. Plus purchases go through the App Store and
-  RevenueCat under an anonymous identifier.</p>
+    <div class="strip">
+      <article class="panel span-7" aria-labelledby="paper-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="paper-title">Paper for your head</h3>
+          <p>A thought barges in mid-focus. You jot it down with one tap, go back to work and sort the note on your break.</p>
+        </div>
+        <div class="stage">
+          <p class="time-caption">10:15&nbsp;AM <span>· mid-focus</span></p>
+          <p class="bubble"><span class="visually-hidden">Loafy says: </span>got distracted. forgot by what</p>
+          <img class="stage-who" src="art/distracted-neutral.webp" width="424" height="512" loading="lazy"
+               alt="Loafy, a red weirdo, staring past his work">
+          <div class="stage-prop app-card">
+            <p class="app-card-title">Idea paper, to sort</p>
+            <ul>
+              <li>is the oven off?</li>
+              <li>email Sam about Friday</li>
+              <li>buy stamps</li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
-  <footer>
-    Связь: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a><br>
-    Опора не заменяет работу со специалистом.
-  </footer>
+      <article class="panel span-5" aria-labelledby="interval-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="interval-title">An interval that fits you</h3>
+          <p>Calibration finds your own focus length, 12 minutes or 40, and the timer runs on it. At each boundary the timer waits for your tap, and auto-start is there if you want it.</p>
+        </div>
+        <div class="stage is-flipped">
+          <p class="time-caption">1:30&nbsp;PM <span>· lunch was at 12</span></p>
+          <p class="bubble"><span class="visually-hidden">Cyclops says: </span>locked in. it’s for a while</p>
+          <img class="stage-who" src="art/hyperfocus-neutral.webp" width="424" height="512" loading="lazy"
+               alt="Cyclops, an orange one-eyed weirdo, locked in with his eye wide open">
+          <div class="stage-prop app-card">
+            <p class="phase"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" fill="none" stroke="var(--forest)" stroke-width="3.5"/></svg>Focus: 25&nbsp;min done</p>
+            <p class="phase"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" fill="none" stroke="var(--sky)" stroke-width="3.5" stroke-dasharray="4 4"/></svg>The break waits for your tap</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel span-5" aria-labelledby="animals-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="animals-title">Tasks as animals</h3>
+          <p>You keep three buffalo at most, so the urgent pile stays small. Each week you pick one to three stones, the big things that move your life.</p>
+        </div>
+        <div class="stage">
+          <p class="time-caption">4:00&nbsp;PM <span>· three deadlines</span></p>
+          <p class="bubble"><span class="visually-hidden">Threeyes says: </span>sees everything, understands nothing</p>
+          <img class="stage-who" src="art/overloaded-neutral.webp" width="424" height="512" loading="lazy"
+               alt="Threeyes, a green three-eyed weirdo, looking at everything at once">
+          <ul class="stage-prop app-card animal-list" role="list" aria-label="The four task animals">
+            <li style="--animal: var(--buffalo)"><b>Buffalo</b> <span class="muted">urgent and important</span></li>
+            <li style="--animal: var(--elephant)"><b>Elephant</b> <span class="muted">big, needs splitting</span></li>
+            <li style="--animal: var(--rabbit)"><b>Rabbit</b> <span class="muted">quick</span></li>
+            <li style="--animal: var(--panda)"><b>Panda</b> <span class="muted">can wait</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="panel span-7" aria-labelledby="practice-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="practice-title">Practices for hard moments</h3>
+          <p>Short exercises based on CBT and DBT, such as <span class="nowrap">5-4-3-2-1</span> grounding, TIPP, STOP and paced breathing, plus Piers Steel’s procrastination equation. Each one explains what the next step is for, and all of them are open without Plus.</p>
+        </div>
+        <div class="stage is-flipped">
+          <p class="time-caption">7:30&nbsp;PM <span>· the couch</span></p>
+          <p class="bubble"><span class="visually-hidden">Puddle says: </span>five more minutes (five hours)</p>
+          <img class="stage-who is-low" src="art/couch-neutral.webp" width="424" height="512" loading="lazy"
+               alt="Puddle, a purple weirdo, melted flat">
+          <div class="stage-prop app-card">
+            <p class="app-card-title">Procrastination equation</p>
+            <p class="equation" role="img" aria-label="Motivation equals expectancy times value, divided by impulsiveness times delay">
+              <span>motivation =</span>
+              <span class="fraction"><span>expectancy × value</span><span>impulsiveness × delay</span></span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section-title" id="night-title">At night, you plant tomorrow’s first step</h2>
+    <div class="night-row">
+      <article class="panel theme-night span-7" aria-labelledby="seed-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="seed-title">A seed for tomorrow</h3>
+          <p>In the evening you pick one task and a first step that takes under two minutes. In the morning one notification arrives in your own words, and the timer opens with that task loaded.</p>
+          <div class="app-card seed-card">
+            <p class="muted">Seed for tomorrow</p>
+            <p class="app-card-title">Call the dentist</p>
+            <p>First step: find the number</p>
+          </div>
+          <p>If you skip it, the seed doesn’t carry over and Opora keeps no tally of it. For nights when your head won’t switch off, the practices include a rest plan.</p>
+        </div>
+        <div class="stage is-flipped">
+          <p class="time-caption">11:10&nbsp;PM</p>
+          <p class="bubble"><span class="visually-hidden">Buzzy says: </span>tired, but won’t rest. on principle</p>
+          <img class="stage-who" src="art/wired-neutral.webp" width="424" height="512" loading="lazy"
+               alt="Buzzy, a green bearded weirdo, wide awake at night">
+          <img class="stage-sleeper" src="art/frozen-sleeping.webp" width="424" height="512" loading="lazy"
+               alt="Cubie, asleep">
+        </div>
+      </article>
+
+      <article class="panel span-5" aria-labelledby="grove-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="grove-title">A grove that grows with you</h3>
+          <p>Each finished interval plants something in your grove, and your awards and companion stay with you. Miss a day and the grove stays the way you left it, with an empty hill for tomorrow’s flowerbed.</p>
+        </div>
+        <figure class="grove-figure">
+          <img src="shots/grove.webp" width="875" height="1368" loading="lazy"
+               alt="Opora’s garden: daisies and sunflowers on a green hill, with a hedgehog in the grass">
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section-title" id="screens-title">Opora on your iPhone</h2>
+    <ul class="screens-rail" role="list" tabindex="0" aria-labelledby="screens-title">
+      <li><img src="shots/en/01-timer.webp" width="660" height="1434" loading="lazy"
+               alt="The timer, captioned Focus your hands can feel: 14:53 left on a green ring with the hedgehog in the middle, fidget grass and a Capture a thought button"></li>
+      <li><img src="shots/en/02-tasks.webp" width="660" height="1434" loading="lazy"
+               alt="Tasks, captioned Turn the mess into four animals: an idea paper to sort and tasks marked buffalo and elephant"></li>
+      <li><img src="shots/en/05-practice.webp" width="660" height="1434" loading="lazy"
+               alt="Practices, captioned Skills for the hard moments: states such as Can’t start and Too much of everything, each with its weirdo"></li>
+      <li><img src="shots/en/06-break.webp" width="660" height="1434" loading="lazy"
+               alt="A break, captioned A little weirdo lives on breaks: 3:40 left on a blue ring, with parked thoughts waiting below"></li>
+    </ul>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section-title" id="cast-title">hi, it’s the weirdos</h2>
+    <p class="section-lead">we’re thirty clay-looking weirdos. we get stuck where you do, frozen before the start or melted on the couch, and the jokes are on us. your days, tasks, intervals and practices add up to one level. it doesn’t go down, and no purchase can raise it. one of us waits on each level from 2 to 20, and each of us cheers when you tap.</p>
+
+    <ol class="cast-grid" role="list">
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/hedgehog-egg.mp4" data-mood="art/hedgehog-hoglet-excited.webp" data-mood-alt="Your hedgehog, hatched and cheering">
+          <img src="art/hedgehog-egg-neutral.webp" width="424" height="512" loading="lazy" alt="A speckled hedgehog egg, waiting for your first step">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>1</span>Your hedgehog</p>
+          <p class="cast-line">hatches on your first step</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/brick.mp4" data-mood="art/brick-excited.webp" data-mood-alt="Bricky, cheering">
+          <img src="art/brick-neutral.webp" width="424" height="512" loading="lazy" alt="Bricky, a red brick weirdo, trying to jump">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>2</span>Bricky</p>
+          <p class="cast-line">tries to jump</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/toast.mp4" data-mood="art/toast-excited.webp" data-mood-alt="Toasty, cheering">
+          <img src="art/toast-neutral.webp" width="424" height="512" loading="lazy" alt="Toasty, a slice of toast with smoke curling off the top">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>3</span>Toasty</p>
+          <p class="cast-line">some days he burns</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/swole.mp4" data-mood="art/swole-excited.webp" data-mood-alt="Swolley, cheering">
+          <img src="art/swole-neutral.webp" width="424" height="512" loading="lazy" alt="Swolley, a muscly orange weirdo in a white tank top, chest out">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>4</span>Swolley</p>
+          <p class="cast-line">puffs his chest with pride</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/sock.mp4" data-mood="art/sock-excited.webp" data-mood-alt="Socky, cheering">
+          <img src="art/sock-neutral.webp" width="424" height="512" loading="lazy" alt="Socky, a lone blue sock weirdo">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>5</span>Socky</p>
+          <p class="cast-line">looking for his pair all his life</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/pickle.mp4" data-mood="art/pickle-excited.webp" data-mood-alt="Picklenaut, cheering">
+          <img src="art/pickle-neutral.webp" width="424" height="512" loading="lazy" alt="Picklenaut, a pickle in a space helmet, looking around">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>6</span>Picklenaut</p>
+          <p class="cast-line">has no idea where he is</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/cap.mp4" data-mood="art/cap-excited.webp" data-mood-alt="Scruffy, cheering">
+          <img src="art/cap-neutral.webp" width="424" height="512" loading="lazy" alt="Scruffy, a grey weirdo in a cap and a gold chain">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>7</span>Scruffy</p>
+          <p class="cast-line">reppin’ the block since 2007</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/fine.mp4" data-mood="art/fine-excited.webp" data-mood-alt="Norman, cheering">
+          <img src="art/fine-neutral.webp" width="424" height="512" loading="lazy" alt="Norman, a brown weirdo holding a mug while flames rise behind him">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>8</span>Norman</p>
+          <p class="cast-line">everything is under control</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/peargent.mp4" data-mood="art/peargent-excited.webp" data-mood-alt="Peargent, cheering">
+          <img src="art/peargent-neutral.webp" width="424" height="512" loading="lazy" alt="Peargent, a green pear in sunglasses with a walkie-talkie">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>9</span>Peargent</p>
+          <p class="cast-line">blows the whistle for no reason</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/banana.mp4" data-mood="art/banana-excited.webp" data-mood-alt="Dr. Banana, cheering">
+          <img src="art/banana-neutral.webp" width="424" height="512" loading="lazy" alt="Dr. Banana, a banana in round glasses with a clipboard">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>10</span>Dr. Banana</p>
+          <p class="cast-line">writes you a sick note for everything</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/bridepotato.mp4" data-mood="art/bridepotato-excited.webp" data-mood-alt="Bride Potato, cheering">
+          <img src="art/bridepotato-neutral.webp" width="424" height="512" loading="lazy" alt="Bride Potato, a potato in a veil and a daisy crown">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>11</span>Bride Potato</p>
+          <p class="cast-line">dreams of the wedding</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/taxcrab.mp4" data-mood="art/taxcrab-excited.webp" data-mood-alt="TaxCrab, cheering">
+          <img src="art/taxcrab-neutral.webp" width="424" height="512" loading="lazy" alt="TaxCrab, a round red weirdo in a tie, holding two calculators">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>12</span>TaxCrab</p>
+          <p class="cast-line">does taxes in his sleep</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/ducknight.mp4" data-mood="art/ducknight-excited.webp" data-mood-alt="Ducknight, cheering">
+          <img src="art/ducknight-neutral.webp" width="424" height="512" loading="lazy" alt="Ducknight, a duck in a knight’s helmet, holding a long sword">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>13</span>Ducknight</p>
+          <p class="cast-line">the sword weighs more than he does</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/dumplingus.mp4" data-mood="art/dumplingus-excited.webp" data-mood-alt="Dumplingus, cheering">
+          <img src="art/dumplingus-neutral.webp" width="424" height="512" loading="lazy" alt="Dumplingus, a dumpling in a red headband with a fork, ready to fight">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>14</span>Dumplingus</p>
+          <p class="cast-line">assumes the battle stance</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/sirwiggles.mp4" data-mood="art/sirwiggles-excited.webp" data-mood-alt="Sir Wiggles, cheering">
+          <img src="art/sirwiggles-neutral.webp" width="424" height="512" loading="lazy" alt="Sir Wiggles, a pink worm in a top hat and a monocle">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>15</span>Sir Wiggles</p>
+          <p class="cast-line">tosses gold coins</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/wizardchicken.mp4" data-mood="art/wizardchicken-excited.webp" data-mood-alt="Wizard Chicken, cheering">
+          <img src="art/wizardchicken-neutral.webp" width="424" height="512" loading="lazy" alt="Wizard Chicken, a chicken in a wizard hat with a staff">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>16</span>Wizard Chicken</p>
+          <p class="cast-line">understands nothing about magic</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/skatefish.mp4" data-mood="art/skatefish-excited.webp" data-mood-alt="Skatefish, cheering">
+          <img src="art/skatefish-neutral.webp" width="424" height="512" loading="lazy" alt="Skatefish, a blue fish riding a skateboard">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>17</span>Skatefish</p>
+          <p class="cast-line">skates with no destination</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/corporatefrog.mp4" data-mood="art/corporatefrog-excited.webp" data-mood-alt="Corporate Frog, cheering">
+          <img src="art/corporatefrog-neutral.webp" width="424" height="512" loading="lazy" alt="Corporate Frog, a frog in a suit and tie with a briefcase">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>18</span>Corporate Frog</p>
+          <p class="cast-line">one sigh after another</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/larpochka.mp4" data-mood="art/larpochka-excited.webp" data-mood-alt="Larpochka, cheering">
+          <img src="art/larpochka-neutral.webp" width="424" height="512" loading="lazy" alt="Larpochka, a mint elf with pointed ears, a flower crown and a bow">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>19</span>Larpochka</p>
+          <p class="cast-line">an elf at heart. the passport disagrees</p>
+        </div>
+      </li>
+      <li class="cast-card">
+        <button class="cast-portrait" type="button" data-clip="clips/dristun.mp4" data-mood="art/dristun-excited.webp" data-mood-alt="Dristun, cheering">
+          <img src="art/dristun-neutral.webp" width="424" height="512" loading="lazy" alt="Dristun, a white cat-eared weirdo in a buttoned cardigan">
+        </button>
+        <div class="cast-text">
+          <p class="cast-name"><span class="level"><span class="visually-hidden">Level </span>20</span>Dristun</p>
+          <p class="cast-line">running. in a hurry. won’t say where</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section-title" id="offer-title">The free part and Plus</h2>
+    <div class="offer-grid">
+      <article class="panel offer-free" aria-labelledby="free-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="free-title">The free part stays free</h3>
+          <p>A feature that moves here from Plus never goes back. You keep all of this without paying:</p>
+          <ul class="list">
+            <li>the timer and calibration</li>
+            <li>tasks and animals, habits and week stones</li>
+            <li>the grove with its awards, and the companion</li>
+            <li>fidgets, the seed, widgets and backup</li>
+            <li>the last 7 days of statistics</li>
+            <li>every technique for a hard moment, in full</li>
+          </ul>
+        </div>
+      </article>
+      <article class="panel offer-plus" aria-labelledby="plus-title">
+        <div class="panel-body">
+          <h3 class="panel-title" id="plus-title">Opora Plus</h3>
+          <p>One purchase or a monthly subscription. Plus adds:</p>
+          <ul class="list">
+            <li>statistics over 14 days and 10 weeks, with peak hours and a summary</li>
+            <li>the gardener’s letter about last week, every Monday</li>
+            <li>the fullscreen garden</li>
+            <li>your own look: the timer ring, the grove sky and the cat on the ring</li>
+            <li>the companion’s basic wardrobe and all six of your own items, yours to wear while Plus is active</li>
+            <li>the full course notes, the Descartes square, the “Look back” decision review and the week breakdown</li>
+          </ul>
+          <p>The subscription renews on its own, and you can cancel it any time in your Apple ID settings.</p>
+        </div>
+      </article>
+      <div class="signature">
+      <button class="signature-face" type="button" aria-pressed="false">
+        <img class="face-rest" src="art/taxcrab-neutral.webp" width="424" height="512" loading="lazy" alt="TaxCrab, a round red weirdo in a tie, holding two calculators" data-alt="">
+        <img class="face-mood" src="art/taxcrab-excited.webp" width="424" height="512" loading="lazy" alt="" data-alt="TaxCrab, beaming over his calculators">
+      </button>
+      <div class="signature-text">
+        <p class="signature-name">TaxCrab</p>
+        <p class="signature-line">does taxes in his sleep</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="section-title" id="faq-title">Questions</h2>
+    <dl class="faq">
+      <div>
+        <dt>Does Opora replace therapy?</dt>
+        <dd>No. Opora does not replace care from a specialist. The practices draw on CBT and DBT and help you through a hard moment, and each one explains what its steps are for.</dd>
+      </div>
+      <div>
+        <dt>Where is my data?</dt>
+        <dd>On your iPhone. Tasks, sessions and settings live on the device, Opora needs no account and shows no ads, and you can save a backup as one file. Opora checks your Plus status with the App Store and RevenueCat under an anonymous identifier, and the <a href="privacy.html">privacy policy</a> has the details.</dd>
+      </div>
+      <div>
+        <dt>Which devices does Opora run on?</dt>
+        <dd>iPhone with iOS&nbsp;17 or later. Opora has Home Screen widgets and a Live Activity on the Lock Screen and in the Dynamic Island.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="wrap section">
+    <div class="closing-panel">
+      <h2 class="closing-line" id="closing-title">Plant a seed tonight, and tomorrow morning the timer opens with your task loaded</h2>
+      <div class="closing-act">
+        <a class="button button-primary" href="https://apps.apple.com/app/id6800092761">Get Opora on the App Store <span class="button-tag">free</span></a>
+        <p>For iPhone with iOS&nbsp;17 or later.</p>
+      </div>
+      <div class="signature">
+        <button class="signature-face" type="button" aria-pressed="false">
+          <img class="face-rest" src="art/frozen-sleeping.webp" width="424" height="512" loading="lazy" alt="Cubie, asleep" data-alt="">
+          <img class="face-mood" src="art/frozen-happy.webp" width="424" height="512" loading="lazy" alt="" data-alt="Cubie, awake and smiling">
+        </button>
+        <div class="signature-text">
+          <p class="signature-name">Cubie</p>
+          <p class="signature-line">can’t start. and won’t</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="wrap site-footer">
+  <ul class="footer-links" role="list">
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="press/index.html">Press kit</a></li>
+    <li><a href="ru/index.html" hreflang="ru" lang="ru">Русский</a></li>
+  </ul>
+  <p>Questions and ideas: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+  <p>Opora does not replace care from a specialist.</p>
+</footer>
 </body>
 </html>

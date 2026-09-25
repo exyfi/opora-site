@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+  // Hosts serve this page at any missing path, so /a/b/ would break relative links. Resolve them from the site root.
+  if (location.protocol !== 'file:') {
+    const root = location.hostname.endsWith('github.io') ? '/' + location.pathname.split('/')[1] + '/' : '/';
+    document.head.append(Object.assign(document.createElement('base'), { href: root }));
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>No page at this address · Opora</title>
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6800092761">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F3EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1A16" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/nunito.css">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header">
+  <a class="brand" href="index.html"><img src="logo.webp" alt="" width="36" height="36">Opora</a>
+  <a class="lang-switch" href="ru/index.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+
+<main id="main">
+  <section class="wrap hero" aria-labelledby="lost-title">
+    <div class="hero-panel">
+      <div class="hero-pitch">
+        <h1 class="hero-title" id="lost-title">There’s no page at this address</h1>
+        <p class="hero-lead">The link may have a typo, or the page moved to another address.</p>
+        <a class="button button-primary hero-cta" href="index.html">Go to the home page</a>
+        <p class="hero-fine" lang="ru">Такой страницы нет. <a href="ru/index.html">Открыть главную на русском</a></p>
+      </div>
+      <div class="hero-stage is-solo">
+        <div class="hero-say">
+          <p class="bubble"><span class="visually-hidden">Picklenaut says: </span>has no idea where he is. the helmet came without a map</p>
+        </div>
+        <img class="hero-who" src="art/pickle-neutral.webp" width="424" height="512" fetchpriority="high"
+             alt="Picklenaut, a pickle in a space helmet, looking around">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap site-footer">
+  <ul class="footer-links" role="list">
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="press/index.html">Press kit</a></li>
+    <li><a href="ru/index.html" hreflang="ru" lang="ru">Русский</a></li>
+  </ul>
+  <p>Questions and ideas: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+  <p>Opora does not replace care from a specialist.</p>
+</footer>
+</body>
+</html>

@@ -1,54 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Опора — Политика конфиденциальности / Privacy Policy</title>
-<style>
-:root { --paper:#F7F3EA; --ink:#2A251D; --muted:#7A7263; --forest:#2F6D46; }
-@media (prefers-color-scheme: dark) {
-  :root { --paper:#1C1A16; --ink:#F2EDE3; --muted:#A79E8D; --forest:#8FC7A0; }
-}
-body { background:var(--paper); color:var(--ink); margin:0; padding:48px 20px 80px;
-  font:17px/1.65 -apple-system, system-ui, sans-serif; }
-main { max-width:640px; margin:0 auto; }
-h1 { font-size:28px; letter-spacing:-.01em; }
-h2 { font-size:20px; margin-top:2.2em; color:var(--forest); }
-p, li { color:var(--ink); }
-.muted { color:var(--muted); font-size:14px; }
-hr { border:none; border-top:1px solid rgba(125,115,95,.25); margin:48px 0; }
-a { color:var(--forest); }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy · Opora</title>
+<meta name="description" content="Opora keeps your tasks, sessions and settings on your iPhone. The policy in English and Russian.">
+<link rel="canonical" href="https://getopora.app/privacy.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F3EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1A16" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6800092761">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Opora">
+<meta property="og:url" content="https://getopora.app/privacy.html">
+<meta property="og:title" content="Privacy Policy · Opora">
+<meta property="og:description" content="Opora keeps your tasks, sessions and settings on your iPhone. The policy in English and Russian.">
+<meta property="og:image" content="https://getopora.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Opora’s weirdos and the hedgehog standing in a row under the headline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy · Opora">
+<meta name="twitter:description" content="Opora keeps your tasks, sessions and settings on your iPhone. The policy in English and Russian.">
+<meta name="twitter:image" content="https://getopora.app/og.png">
+<meta name="twitter:image:alt" content="Opora’s weirdos and the hedgehog standing in a row under the headline">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/nunito.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<main>
-<p class="muted">Опора / Opora · обновлено 9 сентября 2026 · <a href="support.html">поддержка</a></p>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<h1>Политика конфиденциальности</h1>
-<p><strong>Коротко: задачи, сессии и настройки живут только на вашем устройстве. Единственное, что уходит наружу, — покупки Plus.</strong></p>
-<ul>
-  <li>Все ваши данные — задачи, фокус-сессии, решения, настройки — хранятся <strong>только на вашем устройстве</strong>.</li>
-  <li>Единственные сетевые запросы — покупки Plus. Они проходят через App Store и сервис <strong>RevenueCat</strong>: анонимный идентификатор, который генерирует SDK, история покупок (продукт, цена, валюта, даты), версия приложения и iOS, язык и страна магазина, а также показы экрана Plus и место, откуда он открыт. Рекламных идентификаторов, аккаунтов, трекеров и рекламных SDK нет. Ваши задачи, сессии и решения никуда не отправляются.</li>
-  <li>Стандартный резервный бэкап устройства (iCloud) может включать данные приложения — им управляет Apple по вашим настройкам iOS, мы к нему доступа не имеем.</li>
-  <li>Функция «Резервная копия» создаёт JSON-файл по вашей команде; куда его сохранить и кому отдать — решаете только вы.</li>
-  <li>Уведомления планируются локально на устройстве и никуда не передаются.</li>
-  <li>Данные о покупках нужны только для работы Plus и понимания, откуда приходят покупки. Мы их не продаём и не связываем с личностью.</li>
-</ul>
-<p>Вопросы: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+<header class="wrap site-header">
+  <a class="brand" href="index.html"><img src="logo.webp" alt="" width="36" height="36">Opora</a>
+  <a class="lang-switch" href="#ru" lang="ru">Русская версия</a>
+</header>
 
-<hr>
+<main id="main" class="wrap doc">
+  <section class="prose doc-part" id="en" lang="en" aria-labelledby="en-title">
+    <h1 id="en-title">Privacy Policy</h1>
+    <p class="doc-meta">Opora · updated <time datetime="2026-09-24">September 24, 2026</time> · <a href="support.html">support</a></p>
+    <p class="doc-short"><strong>In short: your tasks, sessions and settings stay on your device. The app goes online for one thing: Opora Plus.</strong></p>
+    <ul>
+      <li>Everything you create — tasks, focus sessions, decisions, settings — is stored <strong>on your device only</strong>.</li>
+      <li>The only network requests serve Opora Plus. When you open the app and when you come back to it, the RevenueCat SDK checks your Plus status under an anonymous ID it generates. Purchases go through the App Store and <strong>RevenueCat</strong>: an anonymous ID generated by the SDK, purchase history (product, price, currency, dates), app and iOS version, store language and country, plus views of the Plus screen and where it was opened from. No advertising identifiers, accounts, trackers or ad SDKs. Your tasks, sessions and decisions are never sent anywhere.</li>
+      <li>Your device's standard iCloud backup may include the app's data; that backup is managed by Apple under your iOS settings — we have no access to it.</li>
+      <li>The in-app “Backup” feature creates a JSON file only when you ask for it; where it goes is entirely up to you.</li>
+      <li>Notifications are scheduled locally on the device and never leave it.</li>
+      <li>Purchase data exists only to make Plus work and to see where purchases come from. We do not sell it or link it to your identity.</li>
+    </ul>
+    <p>Questions: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+  </section>
 
-<h1>Privacy Policy</h1>
-<p><strong>In short: your tasks, sessions and settings stay on your device. The only thing that leaves it is Plus purchases.</strong></p>
-<ul>
-  <li>Everything you create — tasks, focus sessions, decisions, settings — is stored <strong>on your device only</strong>.</li>
-  <li>The only network requests are Plus purchases. They go through the App Store and <strong>RevenueCat</strong>: an anonymous ID generated by the SDK, purchase history (product, price, currency, dates), app and iOS version, store language and country, plus views of the Plus screen and where it was opened from. No advertising identifiers, accounts, trackers or ad SDKs. Your tasks, sessions and decisions are never sent anywhere.</li>
-  <li>Your device's standard iCloud backup may include the app's data; that backup is managed by Apple under your iOS settings — we have no access to it.</li>
-  <li>The in-app “Backup” feature creates a JSON file only when you ask for it; where it goes is entirely up to you.</li>
-  <li>Notifications are scheduled locally on the device and never leave it.</li>
-  <li>Purchase data exists only to make Plus work and to see where purchases come from. We do not sell it or link it to your identity.</li>
-</ul>
-<p>Questions: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+  <section class="prose doc-part" id="ru" lang="ru" aria-labelledby="ru-title">
+    <h2 class="doc-title" id="ru-title">Политика конфиденциальности</h2>
+    <p class="doc-meta">Опора / Opora · обновлено <time datetime="2026-09-24">24 сентября 2026</time> · <a href="support.html">поддержка</a></p>
+    <p class="doc-short"><strong>Коротко: задачи, сессии и настройки живут только на вашем устройстве. В сеть приложение выходит только ради Opora Plus.</strong></p>
+    <ul>
+      <li>Все ваши данные — задачи, фокус-сессии, решения, настройки — хранятся <strong>только на вашем устройстве</strong>.</li>
+      <li>Сетевые запросы нужны только для Opora Plus. При запуске и при возвращении в приложение SDK RevenueCat проверяет статус Plus под анонимным идентификатором, который он сам создаёт. Покупки проходят через App Store и сервис <strong>RevenueCat</strong>: анонимный идентификатор, который генерирует SDK, история покупок (продукт, цена, валюта, даты), версия приложения и iOS, язык и страна магазина, а также показы экрана Plus и место, откуда он открыт. Рекламных идентификаторов, аккаунтов, трекеров и рекламных SDK нет. Ваши задачи, сессии и решения никуда не отправляются.</li>
+      <li>Стандартный резервный бэкап устройства (iCloud) может включать данные приложения — им управляет Apple по вашим настройкам iOS, мы к нему доступа не имеем.</li>
+      <li>Функция «Резервная копия» создаёт JSON-файл по вашей команде; куда его сохранить и кому отдать — решаете только вы.</li>
+      <li>Уведомления планируются локально на устройстве и никуда не передаются.</li>
+      <li>Данные о покупках нужны только для работы Plus и понимания, откуда приходят покупки. Мы их не продаём и не связываем с личностью.</li>
+    </ul>
+    <p>Вопросы: <a href="mailto:qmaroongeorgia@gmail.com">qmaroongeorgia@gmail.com</a></p>
+  </section>
 </main>
+
+<footer class="wrap site-footer">
+  <ul class="footer-links" role="list">
+    <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="press/index.html">Press kit</a></li>
+    <li><a href="ru/index.html" hreflang="ru" lang="ru">Русский</a></li>
+  </ul>
+  <p>Opora does not replace care from a specialist.</p>
+</footer>
 </body>
 </html>

@@ -1,0 +1,943 @@
+/* Opora site: one stylesheet for every page. Token names follow DESIGN.md. */
+
+:root {
+  --paper: #F7F3EA;
+  --surface: #FFFDF7;
+  --ink: #2A251D;
+  --ink-muted: #7A7263; /* 4.68:1 on surface, 4.30:1 on paper: muted text lives on surface only */
+  --forest: #2F6D46;
+  --sky: #4E7FA6;
+  --amber: #D98E2B;
+  --buffalo: #C0533A;
+  --elephant: #5F7386;
+  --rabbit: #4C8A55;
+  --panda: #8A8578;
+  --panda-text: #6F6A5E;
+  --on-forest: #F7F3EA;
+  --on-amber: #2A251D;
+  --shade: 42 37 29;
+  --well: var(--paper);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1C1A16;
+    --surface: #26231F;
+    --ink: #F2EDE3;
+    --ink-muted: #A79E8D;
+    --forest: #8FC7A0;
+    --sky: #8FB7D6;
+    --amber: #E8A33D;
+    --buffalo: #E07B5F;
+    --elephant: #9DB2C4;
+    --rabbit: #86C08E;
+    --panda: #A9A395;
+    --panda-text: #A9A395;
+    --on-forest: #1C1A16;
+    --on-amber: #1C1A16;
+    --shade: 10 8 6;
+    --well: color-mix(in srgb, var(--ink) 8%, var(--paper)); /* dark paper swallows the art's dark details */
+    color-scheme: dark;
+  }
+}
+
+/* The night panel wears the dark palette in both appearances. */
+.theme-night {
+  --paper: #1C1A16;
+  --surface: #26231F;
+  --ink: #F2EDE3;
+  --ink-muted: #A79E8D;
+  --forest: #8FC7A0;
+  --sky: #8FB7D6;
+  --amber: #E8A33D;
+  --on-forest: #1C1A16;
+  --on-amber: #1C1A16;
+  --shade: 10 8 6;
+  color-scheme: dark;
+  color: var(--ink);
+}
+
+/* Derived tokens are declared on both roots so the night panel recomputes them from its own ink. */
+:root, .theme-night {
+  --line: color-mix(in srgb, var(--ink) 12%, transparent);
+  --fill-muted: color-mix(in srgb, var(--ink) 7%, var(--paper));
+  --shadow-card: 0 1px 2px rgb(var(--shade) / .06), 0 6px 18px rgb(var(--shade) / .09);
+  --shadow-float: 0 2px 4px rgb(var(--shade) / .07), 0 12px 28px rgb(var(--shade) / .14);
+}
+
+:root {
+  --font-rounded: ui-rounded, "SF Pro Rounded", Nunito, system-ui, sans-serif;
+
+  --text-caption: .75rem;
+  --text-subheadline: .9375rem;
+  --text-lead: 1.125rem;
+  --text-body: 1.0625rem;
+  --text-headline: 1.0625rem;
+  --text-title2: 1.375rem;
+  --text-title: 1.75rem;
+  --text-large-title: 2.125rem;
+  --text-section: clamp(1.625rem, 1rem + 2.4vw, 2.75rem);
+  --text-display: clamp(1.875rem, 1.2rem + 2.8vw, 4rem);
+
+  --space-xs: .25rem;
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-section: clamp(4rem, 3rem + 4vw, 7rem);
+
+  --radius-card: 16px;
+  --radius-button: 14px;
+  --radius-chip: 999px;
+
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --gutter: 1rem;
+}
+
+@media (min-width: 48rem) {
+  :root { --gutter: 2rem; }
+}
+
+/* Base */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-color: color-mix(in srgb, var(--ink) 50%, transparent) var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--text-body)/1.55 var(--font-rounded);
+  overflow-wrap: break-word;
+  accent-color: var(--forest);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.1; text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+b, strong { font-weight: 800; }
+
+a {
+  color: var(--forest);
+  text-decoration-thickness: from-font;
+  text-underline-offset: .18em;
+  text-decoration-skip-ink: auto;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
+
+::selection { background: color-mix(in srgb, var(--forest) 24%, var(--surface)); color: var(--ink); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: var(--gutter);
+  top: var(--space-sm);
+  z-index: 10;
+  padding: .75rem 1.25rem;
+  border-radius: var(--radius-button);
+  background: var(--forest);
+  color: var(--on-forest);
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus-visible { transform: none; }
+
+.wrap {
+  width: min(100% - 2 * var(--gutter), 75rem);
+  margin-inline: auto;
+}
+
+/* Header and footer */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap; /* at 200% text the language link drops below the brand instead of overlapping it */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+  padding-block: var(--space-md);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  min-height: 2.75rem;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: var(--text-title2);
+  letter-spacing: -.01em;
+  text-decoration: none;
+}
+.brand img { width: 2.25rem; height: 2.25rem; border-radius: 22%; }
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-sm);
+  font-weight: 700;
+}
+
+.site-footer {
+  margin-top: var(--space-section);
+  padding-block: var(--space-xl) var(--space-2xl);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  font-size: var(--text-subheadline);
+}
+.site-footer a { overflow-wrap: anywhere; }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
+  padding: 0;
+  list-style: none;
+}
+.footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.footer-links [aria-current="page"] { color: var(--ink); font-weight: 700; text-decoration: none; }
+
+/* Buttons and chips */
+
+.button {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .375rem .75rem;
+  min-height: 3.5rem;
+  padding: calc(.75rem - 1px) calc(1.375rem - 1px);
+  border: 1px solid transparent; /* forced-colors mode paints it, so the button keeps its shape */
+  border-radius: var(--radius-button);
+  font: inherit;
+  font-size: var(--text-body);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.button-primary {
+  background: var(--forest);
+  color: var(--on-forest);
+  box-shadow: var(--shadow-card);
+}
+.button-tag {
+  padding: 1px .5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-chip);
+  background: var(--on-forest);
+  color: var(--forest);
+  font-size: var(--text-subheadline);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  list-style: none;
+}
+.chip {
+  padding: .25rem .75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-chip);
+  background: var(--fill-muted);
+  color: var(--ink);
+  font-size: var(--text-subheadline);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Panels, stages, bubbles */
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.panel-body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+.panel-body p { max-width: 36rem; } /* ch runs wide in Nunito: 62ch gave 80+ characters a line */
+.panel-title {
+  font-size: var(--text-title2);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+.muted { color: var(--ink-muted); }
+.nowrap { white-space: nowrap; }
+
+/* A stage is the paper backdrop a weirdo stands on: time, bubble, the weirdo and a piece of the app.
+   Its panel is a size container, so the layout follows the panel width and the text size, not the viewport. */
+.stage {
+  --who: min(11rem, 28cqi);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--who);
+  grid-template-areas: "time time" "bubble bubble" "prop who";
+  grid-template-rows: 1fr auto auto; /* spare height goes above the bubble, so its tail stays on the speaker */
+  align-items: end;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-lg) var(--space-lg) 0;
+  background: var(--paper);
+}
+.stage.is-flipped {
+  grid-template-columns: var(--who) minmax(0, 1fr);
+  grid-template-areas: "time time" "bubble bubble" "who prop";
+}
+.stage-who { grid-area: who; width: 100%; }
+/* Puddle's art is 45% empty air above the body: tuck it under the bubble row. */
+.stage-who.is-low { margin-top: calc(var(--who) * -.46); }
+.stage-prop { grid-area: prop; min-width: 0; margin-bottom: var(--space-lg); }
+
+.time-caption {
+  grid-area: time;
+  align-self: start;
+  font-size: var(--text-subheadline);
+  font-weight: 700;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.time-caption span { font-weight: 400; }
+
+.bubble {
+  grid-area: bubble;
+  justify-self: end;
+  position: relative;
+  max-width: min(100%, 20ch);
+  margin-bottom: .75rem;
+  padding: .5rem 1rem .75rem;
+  border-radius: 1.25rem;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--text-lead);
+  font-weight: 800;
+  line-height: 1.3;
+  filter: drop-shadow(0 1px 1px rgb(var(--shade) / .08)) drop-shadow(0 6px 10px rgb(var(--shade) / .1));
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  inset-inline-end: calc(var(--who) / 2 - .6rem);
+  width: 1.1rem;
+  height: .8rem;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 20% 100%);
+}
+.is-flipped .bubble { justify-self: start; }
+.is-flipped .bubble::after {
+  inset-inline-end: auto;
+  inset-inline-start: calc(var(--who) / 2 - .6rem);
+  clip-path: polygon(0 0, 100% 0, 80% 100%);
+}
+
+/* Small pieces of the app inside a stage. They show content and never pose as controls. */
+.app-card {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  font-size: var(--text-subheadline);
+  line-height: 1.4;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.app-card-title { font-weight: 800; }
+.app-card ul { margin-top: .375rem; padding-inline-start: 1.1rem; }
+.app-card li + li { margin-top: .125rem; }
+
+.phase { display: flex; align-items: center; gap: .625rem; font-weight: 700; }
+.phase + .phase { margin-top: .625rem; }
+.phase svg { flex: none; width: 1.75rem; height: 1.75rem; }
+
+.animal-list { display: grid; gap: .375rem; list-style: none; }
+.animal-list li { display: flex; flex-wrap: wrap; align-items: center; column-gap: .5rem; }
+.animal-list li::before {
+  content: "";
+  flex: none;
+  width: .625rem;
+  height: .625rem;
+  border-radius: 50%;
+  background: var(--animal);
+}
+
+.equation { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .5rem; margin-top: .5rem; font-weight: 700; }
+.fraction { display: inline-grid; min-width: 0; text-align: center; }
+.fraction span { overflow-wrap: anywhere; }
+.fraction span:first-child { padding: 0 .25rem .125rem; border-bottom: 2px solid currentColor; }
+.fraction span:last-child { padding: .125rem .25rem 0; }
+
+/* Narrow panels (phones, the 5-column panels near 56rem): the bubble moves into the weirdo's column,
+   right above his head, and the app card takes the other column. */
+@container (max-width: 24em) {
+  .stage {
+    --who: min(8.5rem, 38cqi);
+    grid-template-areas: "time time" "prop bubble" "prop who";
+    grid-template-rows: auto 1fr auto;
+    padding: var(--space-md) var(--space-md) 0;
+  }
+  .stage.is-flipped { grid-template-areas: "time time" "bubble prop" "who prop"; }
+  .stage .bubble { justify-self: stretch; align-self: end; max-width: none; padding-inline: .75rem; font-size: var(--text-subheadline); }
+  .stage-prop { align-self: start; }
+  .app-card { padding: .75rem; }
+}
+/* Large text in a narrow panel: one column, the card under the weirdo at full width. */
+@container (max-width: 16em) {
+  .stage, .stage.is-flipped {
+    --who: min(9rem, 50cqi);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "time" "bubble" "who" "prop";
+    grid-template-rows: auto;
+  }
+  .stage .bubble { justify-self: end; max-width: 100%; }
+  .stage.is-flipped .bubble { justify-self: start; }
+  .stage-who { width: var(--who); justify-self: end; }
+  .is-flipped .stage-who { justify-self: start; }
+  .stage-prop { align-self: auto; }
+}
+
+/* Sections */
+
+.section { margin-top: var(--space-section); }
+.section-title {
+  max-width: 24ch;
+  font-size: var(--text-section);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+}
+.section-lead { max-width: 52ch; margin-top: var(--space-sm); font-size: var(--text-lead); }
+.section-lead + .section-lead { margin-top: var(--space-sm); }
+
+/* Hero. Phones: Cubie and his bubble above the headline, no panel. Wide screens: one panel, stage beside the pitch. */
+
+.hero { margin-top: var(--space-xs); }
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: min(6.5rem, 28vw) minmax(0, 1fr);
+  grid-template-areas:
+    "who say"
+    "title title"
+    "lead lead"
+    "cta cta"
+    "chips chips"
+    "fine fine"
+    "note note";
+  column-gap: var(--space-md);
+  align-items: end;
+}
+.hero-pitch, .hero-stage { display: contents; }
+
+.hero-say { grid-area: say; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); padding-bottom: var(--space-md); }
+.hero-say .time-caption { align-self: flex-start; }
+.hero-say .bubble { margin: 0; max-width: 100%; }
+.hero-say .bubble::after {
+  top: auto;
+  bottom: .9rem;
+  inset-inline-start: -.7rem;
+  inset-inline-end: auto;
+  width: .8rem;
+  height: 1rem;
+  clip-path: polygon(100% 0, 100% 100%, 0 80%);
+}
+.hero-who { grid-area: who; width: 100%; }
+
+.hero-title {
+  grid-area: title;
+  margin-top: var(--space-lg);
+  font-size: var(--text-display);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -.03em;
+}
+.hero-lead { grid-area: lead; margin-top: var(--space-md); max-width: 40ch; font-size: var(--text-lead); line-height: 1.5; }
+.hero-cta { grid-area: cta; margin-top: var(--space-lg); }
+.hero-chips { grid-area: chips; margin-top: var(--space-lg); }
+.hero-fine { grid-area: fine; margin-top: var(--space-md); max-width: 44ch; font-size: var(--text-subheadline); }
+.hero-note { grid-area: note; margin-top: var(--space-xl); }
+
+.notification {
+  width: min(100%, 22rem);
+  padding: .75rem 1rem 1rem;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-float);
+  font-size: var(--text-subheadline);
+  line-height: 1.35;
+}
+.notification-head { display: flex; align-items: center; gap: .5rem; margin-bottom: .375rem; font-size: var(--text-caption); font-weight: 700; }
+.notification-head img { width: 1.25rem; height: 1.25rem; border-radius: 22%; }
+.notification-head .muted { margin-inline-start: auto; font-weight: 400; }
+.notification-title { font-weight: 800; }
+
+@media (max-width: 30rem) {
+  .hero-cta { width: 100%; }
+}
+
+@media (min-width: 56rem) {
+  .hero-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    grid-template-areas: "stage pitch";
+    column-gap: 0;
+    align-items: stretch;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+  .hero-stage {
+    --who: min(16rem, 17vw);
+    grid-area: stage;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--who);
+    grid-template-areas: "say say" "note who";
+    grid-template-rows: 1fr auto; /* spare height sits above the bubble, so the tail lands on Cubie */
+    align-items: end;
+    column-gap: var(--space-md);
+    padding: var(--space-xl) var(--space-xl) 0;
+    background: var(--paper);
+  }
+  .hero-pitch {
+    grid-area: pitch;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    padding: var(--space-2xl) clamp(2rem, 4vw, 4rem);
+  }
+  .hero-pitch > * { grid-area: auto; }
+  .hero-title { margin-top: 0; }
+  .hero-say { align-self: stretch; align-items: stretch; justify-content: space-between; gap: var(--space-lg); }
+  .hero-say .bubble {
+    align-self: flex-end;
+    max-width: 13ch;
+    margin-bottom: .75rem;
+    font-size: var(--text-title2);
+  }
+  .hero-say .bubble::after {
+    top: calc(100% - 1px);
+    bottom: auto;
+    inset-inline-start: auto;
+    inset-inline-end: calc(var(--who) / 2 - .6rem);
+    width: 1.2rem;
+    height: .9rem;
+    clip-path: polygon(0 0, 100% 0, 20% 100%);
+  }
+  .hero-note { align-self: end; margin: 0 0 var(--space-xl); }
+
+  /* 404: Picklenaut stands alone on the stage, so he takes the middle and his bubble gets room. */
+  .hero-stage.is-solo {
+    grid-template-columns: minmax(0, 1fr) var(--who) minmax(0, 1fr);
+    grid-template-areas: "say say say" ". who .";
+    align-content: end;
+  }
+  .is-solo .hero-say { justify-content: flex-end; }
+  .is-solo .hero-say .bubble { align-self: center; max-width: 20ch; }
+  .is-solo .hero-say .bubble::after { inset-inline-end: calc(50% - .6rem); }
+}
+
+/* The day strip */
+
+.strip, .night-row { display: grid; gap: var(--space-lg); margin-top: var(--space-xl); }
+.strip > .panel, .night-row > .panel { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 1fr auto; container-type: inline-size; }
+/* The heading and text come first for screen readers; the stage still shows on top. */
+.panel > .stage, .panel > .grove-figure { order: -1; }
+
+@media (min-width: 56rem) {
+  .strip, .night-row { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .span-7 { grid-column: span 7; }
+  .span-5 { grid-column: span 5; }
+  .stage { min-height: 19rem; }
+}
+
+@media (max-width: 30rem) {
+  .panel-body { padding: var(--space-md) var(--space-md) var(--space-lg); }
+}
+
+.stage-sleeper { grid-area: prop; justify-self: end; width: calc(var(--who) * .75); }
+
+.seed-card { max-width: 22rem; margin-block: var(--space-sm); background: var(--paper); box-shadow: none; }
+.seed-card .app-card-title { font-size: var(--text-body); }
+
+/* The grove fills its stage row, so a panel stretched beside the taller night panel shows more hill, not blank paper. */
+.grove-figure { display: grid; padding: var(--space-lg); background: var(--paper); }
+.grove-figure img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 100%; border-radius: var(--radius-card); }
+
+/* Screens */
+
+.screens-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(64%, 15rem);
+  gap: var(--space-md);
+  margin: var(--space-xl) calc(-1 * var(--gutter)) 0;
+  padding: 0 var(--gutter) var(--space-md);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  list-style: none;
+}
+.screens-rail li { scroll-snap-align: start; }
+.screens-rail img { width: 100%; border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+.screens-rail:focus-visible, .screens-rail a:focus-visible { outline-offset: -3px; } /* the scroller clips a ring drawn outside */
+
+@media (min-width: 48rem) {
+  .screens-rail {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-lg);
+    margin-inline: 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+/* The cast */
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7rem), 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 40rem) {
+  .cast-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-md); }
+}
+@media (min-width: 64rem) {
+  .cast-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+.cast-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+/* No overflow clip on the card: a hop may rise past its top edge. */
+.cast-portrait {
+  --pad: var(--space-md);
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: var(--pad) var(--pad) 0;
+  border: 0;
+  border-radius: calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px) 0 0;
+  background: var(--well);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.cast-portrait:focus-visible { outline-offset: -4px; }
+.cast-portrait:active { background: color-mix(in srgb, var(--ink) 6%, var(--well)); }
+.cast-portrait img { width: min(100%, 8.5rem); margin-inline: auto; transform-origin: 50% 100%; }
+/* The clip frame holds the 424x512 art 730/768 wide, centered, 40/1024 above its bottom; the video lines that box up with the img. */
+.cast-portrait video {
+  --art: min(100% - 2 * var(--pad), 8.5rem);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: calc(var(--art) / .9505);
+  aspect-ratio: 3 / 4;
+  margin-bottom: calc(var(--art) / .9505 * -.0521);
+  translate: -50% 0;
+  opacity: 0;
+  pointer-events: none;
+  /* The encoded cream sits within 2 levels of --well: short side and top fades hide what is left of the seam. */
+  -webkit-mask: linear-gradient(90deg, transparent, #000 4% 96%, transparent), linear-gradient(transparent, #000 6%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(90deg, transparent, #000 4% 96%, transparent), linear-gradient(transparent, #000 6%);
+  mask-composite: intersect;
+}
+.cast-portrait.is-playing, .cast-portrait.is-playing:hover, .cast-portrait.is-playing:active { background: var(--well); }
+.cast-portrait.is-playing video { opacity: 1; }
+/* Where site.js plays clips instead of hops, the portrait clips them to its rounded box, fade-out included. */
+@media (prefers-color-scheme: light) and (prefers-reduced-motion: no-preference) {
+  .cast-portrait[data-clip] { overflow: hidden; }
+}
+.cast-text { display: grid; gap: .25rem; padding: .5rem .75rem .75rem; }
+.cast-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem .5rem;
+  font-size: var(--text-headline);
+  font-weight: 800;
+  line-height: 1.3;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: anywhere; /* at 200% text a long name breaks inside its card */
+}
+.cast-line { color: var(--ink-muted); font-size: var(--text-subheadline); line-height: 1.4; }
+
+.level {
+  display: inline-block;
+  min-width: 1.5rem;
+  padding: .125rem .5rem;
+  border-radius: var(--radius-chip);
+  background: var(--amber);
+  color: var(--on-amber);
+  font-size: var(--text-caption);
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Phones: after the base cast rules so these win. */
+@media (max-width: 39.99rem) {
+  .cast-portrait { --pad: var(--space-sm); }
+  .cast-text { padding: .5rem .5rem .75rem; }
+  /* The level sits on its own line, so every card in a row starts its name at the same height. */
+  .cast-name { flex-direction: column; align-items: flex-start; font-size: var(--text-subheadline); }
+}
+
+/* Free and Plus */
+
+.offer-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+.offer-grid .panel-body { gap: var(--space-md); padding: var(--space-xl) var(--space-lg); }
+.offer-grid > .signature { margin-top: 0; }
+/* TaxCrab signs under the shorter free panel, beside the longer Plus one. */
+@media (min-width: 48rem) {
+  .offer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "free plus" "sig plus";
+    align-items: start;
+  }
+  .offer-free { grid-area: free; }
+  .offer-plus { grid-area: plus; }
+  .offer-grid > .signature { grid-area: sig; }
+  .offer-grid .panel-body { padding: var(--space-xl); }
+}
+
+.list { display: grid; gap: .5rem; padding-inline-start: 1.2rem; }
+.list li::marker { color: var(--ink-muted); }
+
+/* Signature: the weirdo who speaks signs with a portrait, a name and a lowercase line. */
+.signature { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-md); margin-top: var(--space-xl); }
+.signature-face {
+  position: relative;
+  flex: none;
+  width: 5.5rem;
+  aspect-ratio: 424 / 512;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.signature-face img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.signature-face .face-mood { opacity: 0; }
+.signature-face[aria-pressed="true"] .face-rest { opacity: 0; }
+.signature-face[aria-pressed="true"] .face-mood { opacity: 1; }
+.signature-text { padding-bottom: .5rem; }
+.signature-name { font-size: var(--text-headline); font-weight: 800; line-height: 1.3; }
+.signature-line { font-size: var(--text-subheadline); line-height: 1.4; }
+.panel .signature-name, .panel .signature-line { color: var(--ink-muted); }
+
+/* Questions */
+
+.faq { display: grid; gap: var(--space-lg); max-width: 36rem; margin-top: var(--space-xl); }
+.faq dt { font-size: var(--text-headline); font-weight: 800; line-height: 1.3; }
+.faq dd { margin-top: .375rem; }
+
+/* Closing */
+
+/* Phones: the closing sits on paper like the hero, so the button keeps the full width. */
+.closing-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+.closing-line {
+  max-width: 22ch;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+.closing-act { display: grid; justify-items: start; gap: var(--space-sm); }
+.closing-panel .signature { margin-top: 0; }
+@media (max-width: 30rem) {
+  .closing-act .button { width: 100%; }
+}
+@media (min-width: 48rem) {
+  /* Packed columns: Cubie signs beside the line and the button instead of at the far edge. */
+  .closing-panel {
+    grid-template-columns: auto auto;
+    justify-content: start;
+    column-gap: 4rem;
+    align-items: end;
+    padding: var(--space-2xl);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+  .closing-panel .signature-face { width: 6.5rem; }
+  .closing-panel .signature { grid-column: 2; grid-row: 1 / span 2; }
+}
+
+/* Russian runs 15-30% longer and Nunito's Cyrillic sets wider. :lang(ru) keeps these off the English page. */
+
+:lang(ru) .hero-title { font-size: clamp(1.875rem, 1.2rem + 2.6vw, 3.5rem); }
+@media (min-width: 56rem) {
+  /* balance left «которые» alone on a line of the four-line desktop headline */
+  :lang(ru) .hero-title { text-wrap: pretty; }
+}
+/* Крабухгалтер, Скейтокарась and Картофеевна outgrow a 3-column phone card: hyphenate, break only as a last resort. */
+:lang(ru) .cast-name {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 8 4 4;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 56rem) {
+  :lang(ru) .hero-say .bubble { max-width: 18ch; }
+}
+
+/* Long legal text: privacy, support, press. */
+
+.prose { max-width: 36rem; } /* about 70 characters a line; ch runs wide in Nunito */
+/* «конфиденциальности» is one 18-letter word: the size shrinks on phones and hyphens catch it at 200% text zoom. */
+.prose h1, .prose .doc-title {
+  font-size: clamp(1.5rem, 1rem + 3vw, var(--text-large-title));
+  font-weight: 900;
+  letter-spacing: -.02em;
+  hyphens: auto;
+}
+.prose h2, .prose .doc-heading { margin-top: var(--space-2xl); font-size: var(--text-title2); font-weight: 800; }
+.prose h3 { margin-top: var(--space-xl); font-size: var(--text-headline); font-weight: 800; }
+.prose p, .prose ul, .prose ol { margin-top: var(--space-md); }
+.prose ul { padding-inline-start: 1.25rem; }
+.prose li + li { margin-top: .5rem; }
+.prose li::marker { color: var(--ink-muted); }
+.prose a { overflow-wrap: anywhere; }
+
+/* One document in two languages: the Russian part repeats the English one below it, so its title is an h2 at h1 size. */
+.doc { padding-top: var(--space-lg); }
+.doc-part { scroll-margin-top: var(--space-lg); }
+.doc-part + .doc-part { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: 1px solid var(--line); }
+.prose .doc-title { margin-top: 0; }
+.prose .doc-meta { margin-top: var(--space-sm); font-size: var(--text-subheadline); font-weight: 600; } /* ink: muted fails 4.5:1 on paper */
+.prose .doc-short {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+/* Motion: only on request, and only for people who have not asked the system for less. */
+
+@media (hover: hover) and (pointer: fine) {
+  .button-primary:hover { background: color-mix(in srgb, var(--forest) 80%, var(--ink)); }
+  .button-secondary:hover { background: var(--fill-muted); }
+  .cast-portrait:hover { background: color-mix(in srgb, var(--ink) 4%, var(--well)); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button { transition: transform 160ms var(--ease-out), background-color 160ms ease-out; }
+  .button:active { transform: scale(.96); }
+  .cast-portrait { transition: background-color 160ms ease-out; }
+  .cast-portrait video { transition: opacity 150ms ease-out; }
+  .cast-portrait img { transition: transform 100ms var(--ease-out); }
+  .cast-portrait:active img { transform: scale(.96); }
+  /* The new face fades in over the old one, which stays opaque until the fade ends. */
+  .signature-face .face-mood { transition: opacity 220ms ease-out; }
+  .signature-face .face-rest { transition: opacity 0s; }
+  .signature-face[aria-pressed="true"] .face-rest { transition: opacity 0s 220ms; }
+  .skip-link { transition: transform 160ms var(--ease-out); }
+}
+
+/* Press kit */
+
+.press-intro .section-lead { margin-top: var(--space-md); }
+.press-top { display: grid; gap: var(--space-2xl); }
+.press-facts .press-group-title { margin-top: 0; font-size: var(--text-title); }
+@media (min-width: 64rem) {
+  .press-top { grid-template-columns: minmax(0, 1fr) minmax(0, 27rem); column-gap: 4rem; align-items: start; }
+  .press-facts { margin-top: var(--space-md); }
+}
+.press-actions { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-xl); }
+.press-fine { max-width: 52ch; margin-top: var(--space-md); font-size: var(--text-subheadline); }
+
+.button-secondary {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+}
+.button-secondary img { width: 1.75rem; height: 1.75rem; border-radius: 22%; }
+.button-secondary .muted { font-size: var(--text-subheadline); font-weight: 600; }
+
+.facts { display: grid; max-width: 46rem; margin-top: var(--space-md); padding: var(--space-xs) var(--space-lg); }
+.facts > div { display: grid; gap: .125rem; padding-block: var(--space-md); }
+.facts > div + div { border-top: 1px solid var(--line); }
+.facts dt { color: var(--ink-muted); font-size: var(--text-subheadline); font-weight: 700; }
+.facts a { overflow-wrap: anywhere; }
+.facts + .section-lead { margin-top: var(--space-lg); }
+@media (min-width: 40rem) {
+  .facts > div { grid-template-columns: 6.5rem minmax(0, 1fr); gap: var(--space-md); align-items: baseline; }
+}
+
+.press-group-title { margin-top: var(--space-2xl); font-size: var(--text-title2); font-weight: 800; line-height: 1.2; }
+.press-group-title + .screens-rail { margin-top: var(--space-md); }
+
+.press-portrait {
+  padding: var(--space-md) var(--space-md) 0;
+  border-radius: calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px) 0 0;
+  background: var(--well);
+}
+.press-portrait img { width: min(100%, 8.5rem); margin-inline: auto; }
+.press-portrait + .cast-text { display: flex; flex: 1; flex-direction: column; }
+.press-dl { display: inline-flex; align-self: flex-start; align-items: center; min-height: 2.75rem; margin-top: auto; font-size: var(--text-subheadline); font-weight: 700; }
+
+.screens-rail a { display: block; border-radius: var(--radius-card); }
+@media (max-width: 39.99rem) {
+  .press-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)); gap: var(--space-md); }
+}
