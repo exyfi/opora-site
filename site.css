@@ -20,30 +20,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* Night sky, owner-approved 2026-09-25: ink blue at OKLCH hue 259 with the app's accents. */
-  :root {
-    --paper: #131A25;
-    --surface: #1F2837;
-    --ink: #F2EDE3;
-    --ink-muted: #97A3B2;
-    --forest: #8FC7A0;
-    --sky: #89C4E3;
-    --amber: #E8A33D;
-    --buffalo: #E07B5F;
-    --elephant: #9EBCD2;
-    --rabbit: #86C08E;
-    --panda: #A6A4A0;
-    --panda-text: #A6A4A0;
-    --on-forest: #131A25;
-    --on-amber: #131A25;
-    --shade: 2 5 17;
-    --well: color-mix(in srgb, var(--ink) 8%, var(--paper)); /* keeps Scruffy's navy cap and Dristun's black cardigan off the paper */
-    color-scheme: dark;
-  }
-}
-
-/* The night panel wears the dark palette in both appearances. */
+/* The night panel is the one dark block on the always-light site. */
 .theme-night {
   --paper: #131A25;
   --surface: #1F2837;
@@ -65,12 +42,6 @@
   --fill-muted: color-mix(in srgb, var(--ink) 7%, var(--paper));
   --shadow-card: 0 1px 2px rgb(var(--shade) / .06), 0 6px 18px rgb(var(--shade) / .09);
   --shadow-float: 0 2px 4px rgb(var(--shade) / .07), 0 12px 28px rgb(var(--shade) / .14);
-}
-@media (prefers-color-scheme: dark) {
-  /* Mixed over whatever sits behind: paper-based fill vanishes on the navy surface (hero chips, secondary button hover). */
-  :root { --fill-muted: color-mix(in srgb, var(--ink) 8%, transparent); }
-  /* Shadows do not show on navy, so the dark break screenshot needs its own edge. */
-  .screens-rail img { outline: 1px solid var(--line); outline-offset: -1px; }
 }
 
 :root {
@@ -704,7 +675,7 @@ a:hover { text-decoration-thickness: 2px; }
 .cast-portrait.is-playing, .cast-portrait.is-playing:hover, .cast-portrait.is-playing:active { background: var(--well); }
 .cast-portrait.is-playing video { opacity: 1; }
 /* Where site.js plays clips instead of hops, the portrait clips them to its rounded box, fade-out included. */
-@media (prefers-color-scheme: light) and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .cast-portrait[data-clip] { overflow: hidden; }
 }
 .cast-text { display: grid; gap: .25rem; padding: .5rem .75rem .75rem; }

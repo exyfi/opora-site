@@ -1,7 +1,6 @@
 // The one opt-in joy moment (a cast weirdo hops) and the signature mood swap. Nothing runs on its own.
 (() => {
   const calm = matchMedia('(prefers-reduced-motion: reduce)');
-  const dark = matchMedia('(prefers-color-scheme: dark)');
 
   // The app's award-sheet hops (DESIGN.md): spring(response .28, damping .55) up 280 ms, (.28, .7) down 320 ms, three times.
   const spring = (damping, t) => {
@@ -57,8 +56,8 @@
 
   document.addEventListener('click', (event) => {
     const portrait = event.target.closest('.cast-portrait');
-    // The clip carries the light well behind the weirdo, so dark mode and Reduce Motion keep the hop and the mood swap.
-    if (portrait) return portrait.dataset.clip && !calm.matches && !dark.matches ? act(portrait) : cheer(portrait);
+    // Reduce Motion keeps the hop and the mood swap instead of the clip.
+    if (portrait) return portrait.dataset.clip && !calm.matches ? act(portrait) : cheer(portrait);
     const face = event.target.closest('.signature-face');
     if (face) swapFace(face);
   });
