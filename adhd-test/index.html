@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Adult ADHD self-check, 6 questions (ASRS v1.1) · Opora</title>
-<meta name="description" content="The six screening questions of the WHO Adult ADHD Self-Report Scale (ASRS v1.1), scored in your browser. A screener for adults, with a note on what to do next.">
+<title>Adult ADHD test and type, 18 questions (ASRS v1.1) · Opora</title>
+<meta name="description" content="The 18 questions of the WHO Adult ADHD Self-Report Scale (ASRS v1.1), scored in your browser: the official screener result plus a chart of inattention and hyperactivity.">
 <link rel="canonical" href="https://getopora.app/adhd-test/">
 <link rel="alternate" hreflang="en" href="https://getopora.app/adhd-test/">
 <link rel="alternate" hreflang="ru" href="https://getopora.app/ru/adhd-test/">
@@ -16,8 +16,8 @@
 <meta property="og:site_name" content="Opora">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://getopora.app/adhd-test/">
-<meta property="og:title" content="Six questions from the WHO adult ADHD screener">
-<meta property="og:description" content="The six screening questions of the WHO Adult ADHD Self-Report Scale (ASRS v1.1), scored in your browser. A screener for adults, with a note on what to do next.">
+<meta property="og:title" content="Adult ADHD self-check: 18 questions from the WHO scale">
+<meta property="og:description" content="The 18 questions of the WHO Adult ADHD Self-Report Scale (ASRS v1.1), scored in your browser: the official screener result plus a chart of inattention and hyperactivity.">
 <meta property="og:image" content="https://getopora.app/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="64x64" href="../favicon.png">
@@ -36,13 +36,15 @@
 </header>
 
 <main id="main" class="wrap test">
-  <h1 class="test-title">Six questions from the WHO adult ADHD screener</h1>
-  <p class="test-lead">The Adult ADHD Self-Report Scale (ASRS v1.1) asks how often six things happened over the past 6 months. The answers take about two minutes.</p>
-  <p class="test-note">The scale is a screener. Only a clinician can diagnose ADHD. Your answers stay in this browser: Google Analytics gets only the start, the finish and which of the two results came out.</p>
+  <h1 class="test-title">Adult ADHD self-check: 18 questions from the WHO scale</h1>
+  <p class="test-lead">Researchers at the World Health Organization and Harvard built the Adult ADHD Self-Report Scale (ASRS v1.1) from the 18 ADHD symptoms in the DSM. Answer for the past 6 months. You need about 5 minutes.</p>
+  <p class="test-note">The scale screens for ADHD. Only a clinician can diagnose it or name its type. Your answers stay in this browser: Google Analytics gets the start, the finish and the result group, and nothing else.</p>
 
   <form class="test-form" novalidate>
-      <fieldset class="test-q" id="q1">
-        <legend><span class="test-q-num">Question 1 of 6</span>How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?</legend>
+    <h2 class="test-part">Part A: the screener</h2>
+    <p class="test-part-lead">The scale’s authors picked these six questions because they predict a clinical diagnosis best.</p>
+      <fieldset class="test-q" id="q1" data-from="2" data-group="in">
+        <legend><span class="test-q-num">Question 1 of 18</span>How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q1" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q1" value="1" required>Rarely</label>
@@ -52,8 +54,8 @@
         </div>
         <p class="test-missing" hidden>Question 1 has no answer yet.</p>
       </fieldset>
-      <fieldset class="test-q" id="q2">
-        <legend><span class="test-q-num">Question 2 of 6</span>How often do you have difficulty getting things in order when you have to do a task that requires organization?</legend>
+      <fieldset class="test-q" id="q2" data-from="2" data-group="in">
+        <legend><span class="test-q-num">Question 2 of 18</span>How often do you have difficulty getting things in order when you have to do a task that requires organization?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q2" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q2" value="1" required>Rarely</label>
@@ -63,8 +65,8 @@
         </div>
         <p class="test-missing" hidden>Question 2 has no answer yet.</p>
       </fieldset>
-      <fieldset class="test-q" id="q3">
-        <legend><span class="test-q-num">Question 3 of 6</span>How often do you have problems remembering appointments or obligations?</legend>
+      <fieldset class="test-q" id="q3" data-from="2" data-group="in">
+        <legend><span class="test-q-num">Question 3 of 18</span>How often do you have problems remembering appointments or obligations?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q3" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q3" value="1" required>Rarely</label>
@@ -74,8 +76,8 @@
         </div>
         <p class="test-missing" hidden>Question 3 has no answer yet.</p>
       </fieldset>
-      <fieldset class="test-q" id="q4">
-        <legend><span class="test-q-num">Question 4 of 6</span>When you have a task that requires a lot of thought, how often do you avoid or delay getting started?</legend>
+      <fieldset class="test-q" id="q4" data-from="3" data-group="in">
+        <legend><span class="test-q-num">Question 4 of 18</span>When you have a task that requires a lot of thought, how often do you avoid or delay getting started?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q4" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q4" value="1" required>Rarely</label>
@@ -85,8 +87,8 @@
         </div>
         <p class="test-missing" hidden>Question 4 has no answer yet.</p>
       </fieldset>
-      <fieldset class="test-q" id="q5">
-        <legend><span class="test-q-num">Question 5 of 6</span>How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?</legend>
+      <fieldset class="test-q" id="q5" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 5 of 18</span>How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q5" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q5" value="1" required>Rarely</label>
@@ -96,8 +98,8 @@
         </div>
         <p class="test-missing" hidden>Question 5 has no answer yet.</p>
       </fieldset>
-      <fieldset class="test-q" id="q6">
-        <legend><span class="test-q-num">Question 6 of 6</span>How often do you feel overly active and compelled to do things, like you were driven by a motor?</legend>
+      <fieldset class="test-q" id="q6" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 6 of 18</span>How often do you feel overly active and compelled to do things, like you were driven by a motor?</legend>
         <div class="test-scale">
           <label class="test-option"><input type="radio" name="q6" value="0" required>Never</label>
           <label class="test-option"><input type="radio" name="q6" value="1" required>Rarely</label>
@@ -107,19 +109,184 @@
         </div>
         <p class="test-missing" hidden>Question 6 has no answer yet.</p>
       </fieldset>
+    <h2 class="test-part">Part B: the other 12 symptoms</h2>
+    <p class="test-part-lead">These answers add detail to your profile of attention and activity. The screener result does not use them.</p>
+      <fieldset class="test-q" id="q7" data-from="3" data-group="in">
+        <legend><span class="test-q-num">Question 7 of 18</span>How often do you make careless mistakes when you have to work on a boring or difficult project?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q7" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q7" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q7" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q7" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q7" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 7 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q8" data-from="3" data-group="in">
+        <legend><span class="test-q-num">Question 8 of 18</span>How often do you have difficulty keeping your attention when you are doing boring or repetitive work?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q8" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q8" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q8" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q8" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q8" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 8 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q9" data-from="2" data-group="in">
+        <legend><span class="test-q-num">Question 9 of 18</span>How often do you have difficulty concentrating on what people say to you, even when they are speaking to you directly?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q9" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q9" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q9" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q9" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q9" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 9 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q10" data-from="3" data-group="in">
+        <legend><span class="test-q-num">Question 10 of 18</span>How often do you misplace or have difficulty finding things at home or at work?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q10" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q10" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q10" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q10" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q10" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 10 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q11" data-from="3" data-group="in">
+        <legend><span class="test-q-num">Question 11 of 18</span>How often are you distracted by activity or noise around you?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q11" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q11" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q11" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q11" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q11" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 11 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q12" data-from="2" data-group="hy">
+        <legend><span class="test-q-num">Question 12 of 18</span>How often do you leave your seat in meetings or other situations in which you are expected to remain seated?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q12" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q12" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q12" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q12" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q12" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 12 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q13" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 13 of 18</span>How often do you feel restless or fidgety?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q13" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q13" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q13" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q13" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q13" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 13 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q14" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 14 of 18</span>How often do you have difficulty unwinding and relaxing when you have time to yourself?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q14" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q14" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q14" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q14" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q14" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 14 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q15" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 15 of 18</span>How often do you find yourself talking too much when you are in social situations?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q15" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q15" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q15" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q15" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q15" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 15 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q16" data-from="2" data-group="hy">
+        <legend><span class="test-q-num">Question 16 of 18</span>When you’re in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q16" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q16" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q16" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q16" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q16" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 16 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q17" data-from="3" data-group="hy">
+        <legend><span class="test-q-num">Question 17 of 18</span>How often do you have difficulty waiting your turn in situations when turn taking is required?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q17" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q17" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q17" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q17" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q17" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 17 has no answer yet.</p>
+      </fieldset>
+      <fieldset class="test-q" id="q18" data-from="2" data-group="hy">
+        <legend><span class="test-q-num">Question 18 of 18</span>How often do you interrupt others when they are busy?</legend>
+        <div class="test-scale">
+          <label class="test-option"><input type="radio" name="q18" value="0" required>Never</label>
+          <label class="test-option"><input type="radio" name="q18" value="1" required>Rarely</label>
+          <label class="test-option"><input type="radio" name="q18" value="2" required>Sometimes</label>
+          <label class="test-option"><input type="radio" name="q18" value="3" required>Often</label>
+          <label class="test-option"><input type="radio" name="q18" value="4" required>Very often</label>
+        </div>
+        <p class="test-missing" hidden>Question 18 has no answer yet.</p>
+      </fieldset>
     <button class="button button-primary test-submit" type="submit">See the result</button>
   </form>
 
   <section class="test-result" tabindex="-1" hidden>
     <div class="panel test-result-panel">
       <div data-band="consistent" hidden>
-        <h2 class="test-result-title">The answers match the pattern the screener looks for</h2>
-        <p><span data-count></span> of 6 answers fall in the range the WHO scoring counts. Four or more is consistent with ADHD in adults. A clinician can confirm it with a full assessment, so take these six answers to the appointment.</p>
+        <h2 class="test-result-title">The screener: the answers match the pattern it looks for</h2>
+        <p><span data-count></span> of 6 Part A answers fall in the range the WHO scoring counts. Four or more is consistent with ADHD in adults. A clinician can confirm it with a full assessment, so take these answers to the appointment.</p>
       </div>
       <div data-band="below_threshold" hidden>
-        <h2 class="test-result-title">The answers fall below the screener’s threshold</h2>
-        <p><span data-count></span> of 6 answers fall in the range the WHO scoring counts, and the threshold is four. The screener misses some adults with ADHD. If focus trouble gets in the way of work or home life, ask a clinician.</p>
+        <h2 class="test-result-title">The screener: the answers fall below its threshold</h2>
+        <p><span data-count></span> of 6 Part A answers fall in the range the WHO scoring counts, and the threshold is four. The screener misses some adults with ADHD. If focus trouble gets in the way of work or home life, ask a clinician.</p>
       </div>
+    </div>
+    <div class="panel test-result-panel test-profile">
+      <h2 class="test-result-title">Your profile by symptom group</h2>
+      <div class="meters">
+        <div class="meter meter-in" data-group="in">
+          <p class="meter-head"><span>Inattention</span> <span class="meter-value" data-value><span data-n>0</span> of 9</span></p>
+          <div class="meter-track" aria-hidden="true"><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-mark"></span></div>
+        </div>
+        <div class="meter meter-hy" data-group="hy">
+          <p class="meter-head"><span>Hyperactivity and impulsivity</span> <span class="meter-value" data-value><span data-n>0</span> of 9</span></p>
+          <div class="meter-track" aria-hidden="true"><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-cell"></span><span class="meter-mark"></span></div>
+        </div>
+        <p class="meter-legend"><span class="meter-legend-mark" aria-hidden="true"></span>The mark at 5 shows the DSM-5 symptom count for adults.</p>
+      </div>
+        <div data-type="combined" hidden>
+          <h3 class="test-type-title">Pattern: combined</h3>
+          <p>Both groups reach five. The DSM-5 calls this the combined presentation: attention slips, and restlessness and quick actions show up too.</p>
+        </div>
+        <div data-type="inattentive" hidden>
+          <h3 class="test-type-title">Pattern: mostly inattentive</h3>
+          <p>Inattention reaches five and hyperactivity stays below it. The DSM-5 calls this the predominantly inattentive presentation, once known as ADD. You lose focus, miss details and misplace things, while outward restlessness stays low.</p>
+        </div>
+        <div data-type="hyperactive" hidden>
+          <h3 class="test-type-title">Pattern: mostly hyperactive-impulsive</h3>
+          <p>Hyperactivity reaches five and inattention stays below it. The DSM-5 calls this the predominantly hyperactive-impulsive presentation: restlessness, talking over people, trouble waiting.</p>
+        </div>
+        <div data-type="none" hidden>
+          <h3 class="test-type-title">Pattern: neither group reaches five</h3>
+          <p>Neither count reaches the DSM-5 line for adults. Sleep, anxiety, depression and stress can also break focus, and a clinician can tell these apart from ADHD.</p>
+        </div>
+      <p class="test-caution">A DSM-5 type also needs symptoms before age 12, in at least two settings such as work and home, and a clear cost to your life. A self-report can’t check any of that.</p>
     </div>
     <div class="panel test-opora">
       <img src="../art/frozen-happy.webp" width="424" height="512" alt="" loading="lazy">
@@ -137,7 +304,28 @@
     <button class="button button-secondary test-again" type="button">Answer again</button>
   </section>
 
-  <p class="test-source">Questions and scoring: Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist, Part A, World Health Organization. Questions 1 to 3 count from “Sometimes”, questions 4 to 6 from “Often”.</p>
+  <section class="test-explain" aria-labelledby="how-title">
+    <h2 class="test-part" id="how-title">How the scoring works</h2>
+    <p>Each question has a cut-off. Questions 1, 2, 3, 9, 12, 16 and 18 count from Sometimes. The other eleven count from Often.</p>
+      <figure class="cutoff">
+        <figcaption>Questions 1, 2, 3, 9, 12, 16, 18</figcaption>
+        <div class="cutoff-row"><span class="cutoff-cell">Never</span><span class="cutoff-cell">Rarely</span><span class="cutoff-cell is-counted">Sometimes</span><span class="cutoff-cell is-counted">Often</span><span class="cutoff-cell is-counted">Very often</span></div>
+      </figure>
+      <figure class="cutoff">
+        <figcaption>All other questions</figcaption>
+        <div class="cutoff-row"><span class="cutoff-cell">Never</span><span class="cutoff-cell">Rarely</span><span class="cutoff-cell">Sometimes</span><span class="cutoff-cell is-counted">Often</span><span class="cutoff-cell is-counted">Very often</span></div>
+      </figure>
+    <p class="cutoff-key"><span class="cutoff-key-swatch" aria-hidden="true"></span>counted</p>
+    <p>The screener result uses Part A only: four or more counted answers out of six match the pattern the WHO scoring looks for. The profile uses all 18 and splits them into the two DSM-5 groups, nine questions each.</p>
+    <h2 class="test-part">Three presentations of ADHD</h2>
+    <ul class="kinds" role="list">
+      <li class="kind kind-in"><span class="kind-dot" aria-hidden="true"></span><h3>Inattentive</h3><p>Focus drifts, details slip, things go missing. From the outside it can look like daydreaming.</p></li>
+      <li class="kind kind-hy"><span class="kind-dot" aria-hidden="true"></span><h3>Hyperactive-impulsive</h3><p>A restless body, fast talk, trouble waiting. In adults the motor often moves inside and shows up as inner restlessness.</p></li>
+      <li class="kind kind-both"><span class="kind-dot" aria-hidden="true"></span><h3>Combined</h3><p>Both groups of symptoms at the same time.</p></li>
+    </ul>
+  </section>
+
+  <p class="test-source">Questions and scoring: Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist, World Health Organization. The symptom groups follow the DSM-5. The 5 of 9 mark is the DSM-5 adult threshold and sits outside the WHO scoring.</p>
 </main>
 
 <footer class="wrap site-footer">

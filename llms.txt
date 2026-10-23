@@ -15,7 +15,7 @@
 
 - [Home, English](https://getopora.app/): features, the free part and Plus, questions
 - [Главная, русский](https://getopora.app/ru/): the same page in Russian
-- [ADHD self-check](https://getopora.app/adhd-test/): the six WHO ASRS v1.1 screening questions for adults, scored in the browser; Russian at /ru/adhd-test/
+- [ADHD self-check](https://getopora.app/adhd-test/): all 18 questions of the WHO ASRS v1.1 for adults, scored in the browser: the Part A screener result and the inattentive, hyperactive-impulsive or combined pattern by DSM-5 symptom counts; Russian at /ru/adhd-test/
 - [Press kit](https://getopora.app/press/): app icon, character art and screenshots
 - [Support](https://getopora.app/support.html): contact support@getopora.app
 - [Privacy policy](https://getopora.app/privacy.html)
