@@ -13,6 +13,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://getopora.app/"/>
   </url>
   <url>
+    <loc>https://getopora.app/adhd-test/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getopora.app/adhd-test/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getopora.app/ru/adhd-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getopora.app/adhd-test/"/>
+  </url>
+  <url>
+    <loc>https://getopora.app/ru/adhd-test/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getopora.app/adhd-test/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getopora.app/ru/adhd-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getopora.app/adhd-test/"/>
+  </url>
+  <url>
     <loc>https://getopora.app/privacy.html</loc>
   </url>
   <url>
