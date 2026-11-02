@@ -203,7 +203,7 @@ a:hover { text-decoration-thickness: 2px; }
 .footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .footer-links [aria-current="page"] { color: var(--ink); font-weight: 700; text-decoration: none; }
 
-/* Buttons and chips */
+/* Buttons */
 
 .button {
   display: inline-flex;
@@ -238,24 +238,6 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: var(--text-subheadline);
   font-weight: 800;
   line-height: 1.4;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  padding: 0;
-  list-style: none;
-}
-.chip {
-  padding: .25rem .75rem;
-  border: 1px solid transparent;
-  border-radius: var(--radius-chip);
-  background: var(--fill-muted);
-  color: var(--ink);
-  font-size: var(--text-subheadline);
-  font-weight: 600;
-  line-height: 1.35;
 }
 
 /* Panels, stages, bubbles */
@@ -438,7 +420,6 @@ a:hover { text-decoration-thickness: 2px; }
     "title title"
     "lead lead"
     "cta cta"
-    "chips chips"
     "fine fine"
     "note note";
   column-gap: var(--space-md);
@@ -470,8 +451,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .hero-lead { grid-area: lead; margin-top: var(--space-md); max-width: 40ch; font-size: var(--text-lead); line-height: 1.5; }
 .hero-cta { grid-area: cta; margin-top: var(--space-lg); }
-.hero-chips { grid-area: chips; margin-top: var(--space-lg); }
-.hero-fine { grid-area: fine; margin-top: var(--space-md); max-width: 44ch; font-size: var(--text-subheadline); }
+.hero-fine { grid-area: fine; margin-top: var(--space-lg); max-width: 44ch; font-size: var(--text-subheadline); }
 .hero-note { grid-area: note; margin-top: var(--space-xl); }
 
 .notification {
@@ -525,7 +505,8 @@ a:hover { text-decoration-thickness: 2px; }
   }
   .hero-pitch > * { grid-area: auto; }
   .hero-title { margin-top: 0; }
-  .hero-say { align-self: stretch; align-items: stretch; justify-content: space-between; gap: var(--space-lg); }
+  .hero-say { align-self: stretch; align-items: stretch; justify-content: flex-end; gap: var(--space-sm); }
+  .hero-say .time-caption { align-self: flex-end; }
   .hero-say .bubble {
     align-self: flex-end;
     max-width: 13ch;

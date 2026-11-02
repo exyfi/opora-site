@@ -1,14 +1,15 @@
 # Opora
 
-> Opora is an iPhone app for adults with ADHD. It has a focus timer calibrated to your own focus length, tasks sorted as animals by urgency, and short CBT and DBT exercises for the moments you stall. The App Store lists it as "Opora: ADHD Skills & Focus Pet". The download is free and it runs on iOS 17 or later, in English, Russian and Spanish.
+> Opora is an iPhone app for adults with ADHD. It has a focus timer calibrated to your own focus length, tasks sorted as animals by urgency, and short CBT and DBT exercises for the moments you stall. The App Store lists it as "Opora: ADHD Timer & Focus Pet". The download is free and it runs on iOS 17 or later, in 31 languages, including English, Russian and Spanish.
 
 - Calibration finds your own focus length, 12 minutes or 40, and the timer runs on it. At each boundary the timer waits for your tap.
 - Tasks go into four animals: buffalo (urgent and important, three at most), elephant (big, needs splitting), rabbit (quick) and panda (can wait).
 - The practices include 5-4-3-2-1 grounding, TIPP, STOP, paced breathing and Piers Steel's procrastination equation. All of them are open without Plus.
 - In the evening you pick tomorrow's first step. In the morning one notification arrives in your words and the timer opens with that task.
 - Each finished interval plants something in a grove. A missed day takes nothing away, and your level never goes down.
-- Opora needs no account and shows no ads. Tasks and sessions stay on the iPhone.
-- Opora Plus is one purchase or a monthly subscription. It adds statistics over 14 days and 10 weeks, a letter about last week every Monday, the fullscreen garden, looks for the timer and the grove, the companion's wardrobe, and tools such as the Descartes square.
+- Opora needs no account and shows no ads. Tasks and sessions stay on the iPhone. Anonymous usage events go to TelemetryDeck and Google Analytics.
+- During a work round a shield closes the apps you choose: up to 3 items free (an app, a category or a site), the whole list with Plus.
+- Opora Plus is one purchase, or a yearly or monthly subscription. It adds statistics over 14 days and 10 weeks, the fullscreen garden, looks for the timer and the grove, the companion's wardrobe, and tools such as the Descartes square.
 - Opora does not replace care from a specialist.
 
 ## Pages
