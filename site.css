@@ -1025,3 +1025,6 @@ a:hover { text-decoration-thickness: 2px; }
   .kinds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .kind p { grid-column: 1 / -1; }
 }
+
+.course-cta { margin-top: var(--space-lg); }
+.course-shot { display: block; width: min(100%, 20rem); height: auto; margin-top: var(--space-xl); border-radius: 24px; }

@@ -20,6 +20,7 @@
 - [ADHD self-check](https://getopora.app/adhd-test/): all 18 questions of the WHO ASRS v1.1 for adults, scored in the browser: the Part A screener result and the inattentive, hyperactive-impulsive or combined pattern by DSM-5 symptom counts; Russian at /ru/adhd-test/
 - [ADHD timer](https://getopora.app/adhd-timer/): how Opora's visual timer sets pomodoro-style rounds to your own focus length (measured by calibration, 5 to 90 minutes), compared with classic pomodoro
 - [ADHD task paralysis](https://getopora.app/adhd-task-paralysis/): what tends to cause it, six small ways to start, and how Opora does each one
+- [ADHD skills course](https://getopora.app/adhd-skills-course/): the nine short lessons in Opora, what each covers and which part is free
 - [Press kit](https://getopora.app/press/): app icon, character art and screenshots
 - [Support](https://getopora.app/support.html): contact support@getopora.app
 - [Privacy policy](https://getopora.app/privacy.html)
